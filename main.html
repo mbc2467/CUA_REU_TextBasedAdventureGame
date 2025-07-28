@@ -32,6 +32,21 @@
             <div class="game-panel" style="width:500px;">
                 <p id="game-text-intro">Enter name to start:</p>
                 <input type="text" name="playerName" id="playerName" class="text-input" placeholder="intern name">
+                <button onclick="selectPlayerChoiceScreen()">Next</button>
+            </div>
+        </div>
+        <!--PLAYER CHOICE SCREEN-->
+        <div class="panel hidden" id="player-choice-screen">
+            <div class="title-bar">
+                <button class="home-button" onclick="triggerHome()">Home</button>
+                <div class="spacer"></div>
+                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                <div class="spacer" style="width:25px;"></div>
+                <h2>Can you Survive the CUA REU?</h2>
+            </div>
+            <div class="game-panel" style="width:500px;">
+                <p id="game-text-intro">Choose your character</p>
+                
                 <button onclick="selectResearchScreen()">Next</button>
             </div>
         </div>

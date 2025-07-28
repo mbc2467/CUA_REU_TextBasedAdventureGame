@@ -9,6 +9,7 @@ function startScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
 
     document.getElementById('playerName').textContent = "";
 }
@@ -21,6 +22,7 @@ function creditsScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
 }
 function instructionsScreen() {
     currentScreen = "instructions-screen";
@@ -31,6 +33,7 @@ function instructionsScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.remove('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
 }
 function selectNameScreen() {
     currentScreen = "choose-name-screen";
@@ -41,6 +44,18 @@ function selectNameScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
+}
+function selectPlayerChoiceScreen() {
+    currentScreen = "player-choice-screen";
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('choose-name-screen').classList.add('hidden');
+    document.getElementById('choose-research-screen').classList.add('hidden');
+    document.getElementById('credits-screen').classList.add('hidden');
+    document.getElementById('mentor-matching-screen').classList.add('hidden');
+    document.getElementById('game-screen').classList.add('hidden');
+    document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.remove('hidden');
 }
 function selectResearchScreen() {
     currentScreen = "choose-research-screen";
@@ -56,6 +71,7 @@ function selectResearchScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
     initResearchButtons();
     updateSelectionDisplay();
 }
@@ -71,6 +87,7 @@ function mentorMatchingScreen() {
     document.getElementById('mentor-matching-screen').classList.remove('hidden');
     document.getElementById('game-screen').classList.add('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
     gameState.assignedMentor = assignMentor();
     displayMentorInfo();
 }
@@ -83,6 +100,7 @@ function beginInternshipScreen() {
     document.getElementById('mentor-matching-screen').classList.add('hidden');
     document.getElementById('game-screen').classList.remove('hidden');
     document.getElementById('instructions-screen').classList.add('hidden');
+    document.getElementById('player-choice-screen').classList.add('hidden');
     initializeStats();
     updateUI();
 }
