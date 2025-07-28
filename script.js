@@ -46,7 +46,17 @@ function selectResearchScreen() {
     currentScreen = "choose-research-screen";
     const name = document.getElementById("playerName").value.trim();
     console.log("PLAYER NAME: " + name);
-    if(name === "") return;
+        // Check if name is empty
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
+    //   Check if a character is selected
+    const selectedCharacter = document.querySelector('input[name="character"]:checked');
+    if (!selectedCharacter) {
+        alert("Please select a character.");
+        return;
+    }
     gameState.internName = name;
     console.log(gameState.internName);
     document.getElementById('start-screen').classList.add('hidden');
@@ -1723,7 +1733,12 @@ week 1: 1 intro + 1 normal
 week 2-5: 2 normal + chance of 3rd
 week 6+: 2 normal + larger chance of 3rd + chance of one of the events being major event
 
-IDEAS: ride on scooters
+IDEAS: 
+- ride on lime scooters around monuments
+- calli/high schooler arrives in the 6th week
+- hostile walking priest encounter on campus
+- calling ms leslie
+- 
 
 CUSTOM EVENT CHOICES FOR SPECIFIC PEOPLE:
 celine - able to eat bird/forage (diningHallID)
