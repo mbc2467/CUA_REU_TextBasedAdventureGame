@@ -544,6 +544,8 @@ progress::-moz-progress-bar {
   color: #00ff99;
 }
 
-.center {
-  text-align: center;
+.next-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
