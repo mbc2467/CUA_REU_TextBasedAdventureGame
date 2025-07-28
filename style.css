@@ -491,3 +491,55 @@ progress::-moz-progress-bar {
 #resultTextStats {
     color: #ffd900;
 }
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.character-tile {
+  background-color: #111;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  text-align: center;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.character-tile:hover {
+  background-color: #003300;
+  transform: scale(1.03);
+}
+
+.character-tile input[type="radio"] {
+  display: none;
+}
+
+.character-tile img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+}
+
+.character-tile input[type="radio"]:checked + img {
+  border-color: #00ff99;
+}
+
+.character-tile span {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #00ff99;
+}
