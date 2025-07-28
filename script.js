@@ -1198,10 +1198,12 @@ normalEvents = [
                         weight: [1,0,0,0],
                         effects: [-1,+2,0,0]
                     },
+                    {
                         resultText: "It starts pouring rain and drenches your group before even seeing the pandas.",
                         chance: 10,
                         weight: [1,1,1,1],
                         effects: [-2,-1,+1,0]
+                    }
                 ]
             },
             {
@@ -1724,7 +1726,14 @@ week 6+: 2 normal + larger chance of 3rd + chance of one of the events being maj
 IDEAS: ride on scooters
 
 CUSTOM EVENT CHOICES FOR SPECIFIC PEOPLE:
-celine- able to eat bird/forage (diningHallID)
+celine - able to eat bird/forage (diningHallID)
+emma - 
+mallory - softball skills allow for catching 7/11 slurpees and/or food thrown in garvey, computer arrival results in +2000% productivity
+walker - skateboard skills give agility for dodging things, new chi-squared optimization model leads to breakthrough
+james - exploration buff, networking with interns at CUA (charisma buff)
+jacob - 
+archie - 
+marlena - able to talk her way out of a situation (improv + charisma)
 
 
 
