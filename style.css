@@ -535,11 +535,15 @@ progress::-moz-progress-bar {
 }
 
 .character-tile input[type="radio"]:checked + img {
-  border-color: #00ff99;
+  border-color: #ffffff;
 }
 
 .character-tile span {
   margin-top: 6px;
   font-weight: bold;
   color: #00ff99;
+}
+
+.center {
+  text-align: center;
 }
