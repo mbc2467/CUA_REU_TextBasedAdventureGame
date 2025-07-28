@@ -434,7 +434,7 @@ introEvents = [
                 text: "Stare forward in silence",
                 outcomes: [
                     {
-                        resultText: "Neither of you speak. Its a little awkward but okay.",
+                        resultText: "Neither of you speak. It's a little awkward but okay.",
                         chance: 50, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [0,0,+1,0]
@@ -783,7 +783,7 @@ introEvents = [
                 text: "Wander around outside looking at the birds",
                 outcomes: [
                     {
-                        resultText: "You see a lot of common housesparrows.",
+                        resultText: "You see a lot of common house sparrows.",
                         chance: 50, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [+1,0,-1,0]
@@ -795,7 +795,7 @@ introEvents = [
                         effects: [+3,0,-1,0]
                     },
                     {
-                        resultText: "Out of nowhere a bird swoops down and tries to attack you.",
+                        resultText: "Out of nowhere a bird swoops down and tries to peck your eyes out.",
                         chance: 5, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [-5,0,+2,0]
@@ -1149,16 +1149,16 @@ normalEvents = [
         description: "Some other REU students are asking if anyone wants to sight-see this weekend",
         choices: [
             {
-                text: "Politely decline because you have a stack of papers your professor wants you to read",
+                text: "Politely decline because you have a stack of papers that your professor wants you to read",
                 outcomes:[
                     {
-                        resultText: "You try to read, but end up doomscrolling half the time.",
+                        resultText: "You try to read, but end up doomscrolling half the time away.",
                         chance: 30,
                         weight: [1,0,1,0],
                         effects: [0,0,+1,+1]
                     },
                     {
-                        resultText: "You get through everything and impress your mentor on Monday!",
+                        resultText: "You get through everything and impress your mentor on Monday.",
                         chance: 15,
                         weight: [1,1,1,1],
                         effects: [+4,+3,+3,+5]
@@ -1182,7 +1182,7 @@ normalEvents = [
                 outcomes:[
                     {
                         resultText: "You bond with the other interns over Panda Diplomacy.",
-                        chance: 45,
+                        chance: 40,
                         weight: [1,1,0,0],
                         effects: [+2,+3,0,0]
                     },
@@ -1194,10 +1194,14 @@ normalEvents = [
                     },
                     {
                         resultText: "You get sunburned and exhausted but happy.",
-                        chance: 45,
+                        chance: 40,
                         weight: [1,0,0,0],
                         effects: [-1,+2,0,0]
-                    }
+                    },
+                        resultText: "It starts pouring rain and drenches your group before even seeing the pandas.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-2,-1,+1,0]
                 ]
             },
             {
@@ -1247,7 +1251,7 @@ normalEvents = [
                         effects: [+1,0,+2,0]
                     },
                     {
-                        resultText:"You sit with some old ladies who tell you about a mysterious prophecy.",
+                        resultText:"You sit and argue with some old ladies who tell you about a mysterious prophecy.",
                         chance: 10,
                         weight: [0,1,1,0],
                         effects: [0,+1,+2,0]
@@ -1331,7 +1335,7 @@ normalEvents = [
                 text:"Sneak in from the exit",
                 outcomes:[
                     {
-                        resultText:"You almost get caught but you hide in the bathroom for 10 minutes.",
+                        resultText:"You almost get caught but you hide in the bathroom for 10 minutes and are able to get in.",
 
                     },
                     {
@@ -1559,7 +1563,7 @@ normalEvents = [
                         effects:[]
                     },
                     {
-                        resultText:"Your life line indicates you will be married in under 2 years.",
+                        resultText:"Your life line indicates you will be married and give birth in under 2 years.",
                         chance:25,
                         weight:[1,1,1,0],
                         effects:[-1,-1,+3,0]
@@ -1573,7 +1577,7 @@ normalEvents = [
                 ]
             },
             {
-                text:"Go on a Dragon Boat Ride",
+                text:"Go on a Dragon pedal-boat ride",
                 outcomes:[
                     {
                         resultText:"It starts pouring but you have a good time.",
@@ -1582,13 +1586,13 @@ normalEvents = [
                         effects:[+1,-2,0,0]
                     },
                     {
-                        resultText:"The boat tips and you all fall in.",
+                        resultText:"The boat tips over and you all fall in.",
                         chance:10,
                         weight:[1,1,1,0],
                         effects:[-5,0,+4,0]
                     },
                     {
-                        resultText:"You all get weird looks for the dragon noises you guys make but otherwise solid.",
+                        resultText:"You all get weird looks for the dragon noises you guys make but it was an otherwise solid experience.",
                         chance:55,
                         weight:[1,1,1,0],
                         effects:[+3,0,0,0]
