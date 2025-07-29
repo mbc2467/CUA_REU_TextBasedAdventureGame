@@ -1431,10 +1431,10 @@ normalEvents = [
                         effects: [+3,-1,0,0]
                     },
                     {
-                        resultText:"You miss going to the dining hall.",
+                        resultText:"You get food but anything you have to pay for is dissapointing.",
                         chance: 30,
                         weight: [1,0,1,0],
-                        effects: [-2,0,+2,0]
+                        effects: [-1,0,-2,0]
                     }
                 ]
             }
@@ -1451,13 +1451,22 @@ normalEvents = [
                 outcomes:[
                     {
                         resultText:"You almost get caught but you hide in the bathroom for 10 minutes and are able to get in.",
+                        chance: 40,
+                        weight: [1,1,0,0],
+                        effects: [+3,0,+3,0]
 
                     },
                     {
-                        resultText:"The same dining worker that yelled at you earlier sees you sneaking in and tackles you to the floor."
+                        resultText:"The same dining worker that yelled at you this morning sees you sneaking in and tackles you to the floor.",
+                        chance: 15,
+                        weight: [1,1,0,0],
+                        effects: [-5,0,+5,0]
                     },
                     {
-                        resultText:""
+                        resultText:"With the help of another intern you are able to sneak in and get food.",
+                        chance: 45,
+                        weight: [1,1,0,0],
+                        effects: [+2,0,+1,0]
                     }
                 ]
             },
@@ -1465,10 +1474,22 @@ normalEvents = [
                 text:"Beg the dining worker on your knees to let you in",
                 outcomes:[
                     {
-                        resultText:"You have to wait til other physics REU students come and vouch for you but you get in eventually."
+                        resultText:"You have to wait til other physics REU students come and vouch for you but you get in eventually.",
+                        chance: 25,
+                        weight: [1,1,0,0],
+                        effects: [+4,+2,-1,0]
                     },
                     {
-                        resultText:""
+                        resultText:"The dining worker pities you and lets you in.",
+                        chance: 40,
+                        weight: [1,1,0,0],
+                        effects: [+4,0,-1,0]
+                    },
+                    {
+                        resultText:"Despite your best efforts, the dining worker is not moved and you are forced to leave.",
+                        chance: 35,
+                        weight: [1,1,0,0],
+                        effects: [-2,0,+1,0]
                     }
                 ]
             },
@@ -1477,6 +1498,21 @@ normalEvents = [
                 outcomes:[
                     {
                         resultText:"An angry worker yells at you but you pretend to be deaf. Suprisingly it works.",
+                        chance: 20,
+                        weight: [1,1,0,0],
+                        effects: [+4,+2,-1,0]
+                    },
+                    {
+                        resultText:"You are recognized by a dining hall worker who threatens to call campus security.",
+                        chance: 35,
+                        weight: [1,1,0,0],
+                        effects: [-2,0,+3,0]
+                    },
+                    {
+                        resultText:"You get in but the food is terrible and you feel guilty for sneaking in.",
+                        chance: 45,
+                        weight: [1,1,0,0],
+                        effects: [0,-4,-3,0]
                     }
                 ]
             },
@@ -1484,13 +1520,28 @@ normalEvents = [
                 text:"Give up and eat somewhere else",
                 outcomes:[
                     {
-                        resultText:"Return to your dorm but you still don't have your ID so you can't get in."
+                        resultText:"Return to your dorm but you still don't have your ID so you can't get in.",
+                        chance: 20,
+                        weight: [1,1,1,0],
+                        effects: [-5,-4,+1,0]
                     },
                     {
-                        resultText:"Trader Joe's run"
+                        resultText:"Trader Joe's run",
+                        chance: 40,
+                        weight: [1,1,1,0],
+                        effects: [+1,0,-1,0]
                     },
                     {
                         resultText:"You eat alone at Chipotle but at least you got some steps in.",
+                        chance: 40,
+                        weight: [1,1,1,0],
+                        effects: [+1,+2,0,0]
+                    },
+                    {
+                        resultText:"Another REU student makes dinner with you in the dorm kitchen and you bond over the experience.",
+                        chance: 20,
+                        weight: [1,1,0,0],
+                        effects: [+3,+2,0,0]
                     }
                 ]
             }
@@ -1669,13 +1720,13 @@ normalEvents = [
                         resultText:"You find out your true passion in life is actually Pharmacology.",
                         chance:25,
                         weight:[1,1,1,0],
-                        effects:[+1,-5,]
+                        effects:[+1,-5,0,0]
                     },
                     {
                         resultText:"You will make lots of money after you sell your soul to Lockheed Martin.",
                         chance:25,
                         weight:[1,1,1,1],
-                        effects:[]
+                        effects:[+3,+2,0,0]
                     },
                     {
                         resultText:"Your life line indicates you will be married and give birth in under 2 years.",
@@ -1800,25 +1851,72 @@ normalEvents = [
         ]
     }
 ]
-majorEvents=[
+globalMeetingEvents=[ // List of global meetings that can each happen every week
     {
         id:"globalMeeting1",
         title:"REU Global Meeting",
-        weekRange:[3],
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
     },
     {
         id:"globalMeeting2",
         title:"REU Global Meeting",
-        weekRange:[6],
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
     },
     {
         id:"globalMeeting3",
         title:"REU Global Meeting",
-        weekRange:[8],
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
     },
     {
-        id:"finalPresentationCheckpoint",
+        id:"globalMeeting4",
         title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeeting5",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeeting6",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeeting7",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeeting8",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeetin9",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+    {
+        id:"globalMeeting10",
+        title:"REU Global Meeting",
+        weekRange:[1,2,3,4,5,6,7,8],
+        description:""
+    },
+]
+majorEvents=[
+    {
+        id:"finalPresentationCheckpoint",
+        title:"Practice Session for Final Presentation",
         weekRange:[9],
     },
     {
@@ -1835,7 +1933,10 @@ labSpecificEvents=[
 
 let currentEvent = null;
 let numEventsTilNextWeek = null;
-week1EventQueue = [];
+weekEventQueue = [];
+
+eventsPerWeekMin = [-1,3,4,4,4,4,4,4,4,4,4]; // index 0 is unused, so week 1 starts at index 1
+eventsPerWeekMax = [-1,5,5,6,6,6,6,6,6,6,6];
 
 function updateNextTurnButton() {
     console.log("updating next turn button..");
@@ -1863,18 +1964,18 @@ function updateNextWeekButton() {
 }
 function weekOneEvents() {
     console.log("Beginning week 1 events");
-    numEventsTilNextWeek = getRandomIntInclusive(3,5);
+    numEventsTilNextWeek = getRandomIntInclusive(eventsPerWeekMin[gameState.currentWeek], eventsPerWeekMax[gameState.currentWeek]); // Should be 3-5
     console.log(numEventsTilNextWeek + " events in week 1");
 
     const shuffled = [...introEvents].sort(() => 0.5 - Math.random());
-    week1EventQueue = shuffled.slice(0, numEventsTilNextWeek);
+    weekEventQueue = shuffled.slice(0, numEventsTilNextWeek);
     console.log("successfully shuffled and sliced temp events");
 
     loadNextWeek1Event();
 }
 function loadNextWeek1Event() {
-    if (week1EventQueue.length > 0) {
-        const nextEvent = week1EventQueue.shift();
+    if (weekEventQueue.length > 0) {
+        const nextEvent = weekEventQueue.shift();
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK 1 COMPLETE");
@@ -2026,17 +2127,20 @@ function nextTurn() {
         loadNextWeek1Event();
     }
     else {
-        console.log("no more next turns. week 2 coming soon :))");
+        //console.log("no more next turns. week 2 coming soon :))");
+        loadNextGenericWeekEvent();
     }
 }
 function nextWeek() {
+    /*
     if(gameState.currentWeek == 1) {
         console.log("week 2 coming soon :)");
         return;
-    }
+    } 
+    */
     document.getElementById('nextWeek-button').classList.add('hidden');
     document.getElementById('nextTurn-button').classList.add('hidden');
-    console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
+    // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
     gameState.currentWeek++;
     console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
@@ -2046,7 +2150,44 @@ function nextWeek() {
     if(gameState.currentWeek == 1) {
         weekOneEvents();
     }
+    else {
+        // week 2-10 events
+        console.log("Loading Week " + gameState.currentWeek + " events");
+        genericWeekEvents();
+    }
     updateNextWeekButton();
+}
+
+function loadGlobalMeetingEvent() {
+    const index = randomIntInclusive(0, globalMeetings.length - 1);
+    const selectedGlobalMeeting = globalMeetings[index];
+    console.log("Loading global meeting event: " + selectedGlobalMeeting.title);
+    globalMeetingEvents.splice(index,1); // Remove global meeting event from the list so it can't be chosen again
+    loadEvent(selectedGlobalMeeting); // this displays the event and choice UI
+}
+
+
+function genericWeekEvents() {
+    console.log("Beginning week " + gameState.currentWeek + " events");
+    numEventsTilNextWeek = getRandomIntInclusive(3,5);
+    console.log(numEventsTilNextWeek + " events in week  " + gameState.currentWeek);
+
+    weekEventQueue = [];
+    const shuffled = [...normalEvents].sort(() => 0.5 - Math.random());
+    weekEventQueue = shuffled.slice(0, numEventsTilNextWeek);
+    console.log("successfully shuffled and sliced temp events");
+
+    loadNextGenericWeekEvent();
+}
+
+function loadNextGenericWeekEvent() {
+   if (weekEventQueue.length > 0) {
+        const nextEvent = weekEventQueue.shift();
+        loadEvent(nextEvent); // this displays the event and choice UI
+    } else {
+        console.log("WEEK " + gameState.currentWeek + " COMPLETE");
+        // nextTurn(); // or whatever should happen after week 1
+    }   
 }
 
 
