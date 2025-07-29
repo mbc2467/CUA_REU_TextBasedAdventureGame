@@ -2070,6 +2070,7 @@ function nextTurn() {
     }
     else {
         console.log("no more next turns. week 2 coming soon :))");
+        alert("Week 2+ Coming Soon!");
     }
 }
 function nextWeek() {
