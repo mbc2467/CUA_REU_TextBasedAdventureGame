@@ -946,22 +946,34 @@ normalEvents = [
                 text: "Take notes during the meeting.",
                 outcomes: [
                     {
-                        resultText: "Your mentor is impressed by your engagement.",
-                        chance: 50,
-                        weight: [1,1,0,1], // happiness, motivation, stress, research progress
-                        effects: [+5,+4,0,+3]
+                        resultText: "Your mentor is impressed by your engagement and nods in approval.",
+                        chance: 20,
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [+4,+4,0,+3]
                     },
                     {
                         resultText: "You contribute a thoughtful comment. The lab is impressed.",
-                        chance: 25,
+                        chance: 20,
                         weight: [1,1,1,1],
-                        effects: [+4,+6,0,+4]
+                        effects: [+3,+3,0,+4]
                     },
                     {
                         resultText: "You mostly stay silent but absorb a lot.",
-                        chance: 25,
+                        chance: 20,
                         weight: [1,1,1,1],
-                        effects: [+2,+2,0,+2]
+                        effects: [0,+2,0,+2]
+                    },
+                    {
+                        resultText: "Your mentor thinks you're not paying attention.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,0]
+                    },
+                    {
+                        resultText: "You try to pay attention but end up doodling instead.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,-3,0,0]
                     }
                 ]
             },
@@ -969,22 +981,28 @@ normalEvents = [
                 text: "Sit silently and try to decode the jargon.",
                 outcomes: [
                     {
-                        resultText: "It's overwhelming, but you learn a few key terms.",
-                        chance: 60,
+                        resultText: "You are able to follow along with most of the discussion.",
+                        chance: 25,
                         weight: [1,1,1,1],
-                        effects: [+1,+2,+3,+1]
+                        effects: [0,+3,0,+3]
+                    },
+                    {
+                        resultText: "It's overwhelming, but you learn a few key terms.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [0,0,+3,+2]
                     },
                     {
                         resultText: "You nod along like you understand everything.",
                         chance: 25,
                         weight: [1,0,1,0],
-                        effects: [0,0,+2,0]
+                        effects: [0,0,+2,+1]
                     },
                     {
                         resultText: "You zone out and miss something important.",
-                        chance: 15,
+                        chance: 20,
                         weight: [0,0,1,1],
-                        effects: [-2,-1,+5,0]
+                        effects: [0,-1,+4,0]
                     }
                 ]
             }, 
@@ -995,7 +1013,7 @@ normalEvents = [
                         resultText: "People seem to appreciate your curiosity.",
                         chance: 50,
                         weight: [1,1,0,1],
-                        effects: [+3,+3,0,+3]
+                        effects: [+3,+3,0,+2]
                     },
                     {
                         resultText: "One postdoc answers curtly and moves on.",
@@ -1007,7 +1025,7 @@ normalEvents = [
                         resultText: "Someone explains something really helpful.",
                         chance: 20,
                         weight: [1,1,0,1],
-                        effects: [+2,+4,0,+4]
+                        effects: [+2,+4,0,+2]
                     }
                 ]
             }
@@ -1845,6 +1863,101 @@ normalEvents = [
                         chance:35,
                         weight:[0.5,1,0.25,0.5],
                         effects:[-3,0,+1,+4]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id:"FreeTime",
+        title:"Free Time",
+        weekRange:[5,6,7,8],
+        description:"You have some free time this weekend, do you...",
+        choices:[
+            {
+                text:"Work on your project outside of lab",
+                outcomes:[
+                    {
+                        resultText:"You make great progress and feel accomplished.",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+3,+3,0,+5]
+                    },
+                    {
+                        resultText:"You get distracted by YouTube and end up watching cat videos for hours.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,-3,+3,0]
+                    },
+                    {
+                        resultText:"You realize you need to do more research before making any real progress.",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [0,-1,0,+1]
+                    },
+                    {
+                        resultText:"You get so into it that you end up ordering takeout at 2am.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,+3]
+                    }
+                ]                
+            },
+            {
+                text:"Sightsee around DC",
+                outcomes:[
+                    {
+                        resultText:"You go to the National Archives and read physics papers from the 1800s.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,+2,0,+1]
+                    },
+                    {
+                        resultText:"You get lost in the city and end up at a random food truck.",
+                        chance: 20,
+                        weight: [1,1,1,0],
+                        effects: [0,+1,+2,0]
+                    },
+                    {
+                        resultText:"You visit the Washington Monument and realize its just a really inefficient capacitor.",
+                        chance: 30,
+                        weight: [1,1,1,0],
+                        effects: [+3,+2,0,0]
+                    },
+                    {
+                        resultText:"You try to calculate the gravitational potential of the top of the Capitol Dome and get escorted away by security.",
+                        chane: 30,
+                        weight: [1,1,1,0],
+                        effects: [-3,0,+4,0]
+                    }
+                ]
+            },
+            {
+                text:"Catch up on sleep",
+                outcomes:[
+                    {
+                        resultText:"You sleep for 12 hours straight and wake up feeling refreshed.",
+                        chance: 30,
+                        weight: [1,1,1,0],
+                        effects: [+5,+3,0,0]
+                    },
+                    {
+                        resultText:"You sleep through your alarm and don't make it to Garvey Hall in time for a free meal.",
+                        chance: 20,
+                        weight: [1,1,1,0],
+                        effects: [-2,+1,+2,0]
+                    },
+                    {
+                        resultText:"You have nightmares about your project and wake up more tired than before.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-3,-2,+2,0]
+                    },
+                    {
+                        resultText:"You sleep so much that you forget what day it is.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+1,0,0]
                     }
                 ]
             }
