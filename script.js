@@ -305,6 +305,7 @@ function handleAreaClick(area) {
         if (selectedResearchAreas.length >= maxSelections) return; // Already 3 chosen
         selectedResearchAreas.push(area);
     }
+    console.log("Selected Research Areas: ", selectedResearchAreas);
 
     updateSelectionDisplay();
 }
@@ -361,7 +362,7 @@ const mentorPool = {
             researchDescription: "Investigation of glassy biological materials and their nanostructured physical properties in the Vitreous State Laboratory."
         }
     ],
-    "Computational": [
+    "Computational Physics": [
         {
             name: "Dr. Vadim Uritsky",
             field: "Computational Physics",
@@ -401,7 +402,7 @@ const mentorPool = {
             researchDescription: "Models quantum mechanical properties of nanostructures and strongly correlated systems."
         }
     ],
-    "Nuclear": [
+    "Nuclear Physics": [
         {
             name: "Dr. Tanja Horn",
             field: "Nuclear Physics",
@@ -421,7 +422,7 @@ const mentorPool = {
             researchDescription: "Investigates nuclear scattering processes and quark-gluon interactions in nuclei."
         }
     ],
-    "Particle": [
+    "Particle Physics": [
         {
             name: "Dr. Rachel Bartek",
             field: "Particle Physics",
