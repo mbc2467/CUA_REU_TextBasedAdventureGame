@@ -533,7 +533,7 @@ introEvents = [
                         effects: [-10,0,+15,0]
                     },
                     {
-                        resultText: "They nod, vaguely impressed.",
+                        resultText: "They nod, subtley impressed.",
                         chance: 40, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [+3,+3,0,0]
@@ -961,7 +961,7 @@ normalEvents = [
                         effects: [+3,+3,0,+4]
                     },
                     {
-                        resultText: "You mostly stay silent but absorb a lot.",
+                        resultText: "You mostly stay silent but absorb a lot of new information.",
                         chance: 20,
                         weight: [1,1,1,1],
                         effects: [0,+2,0,+2]
