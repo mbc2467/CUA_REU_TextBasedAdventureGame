@@ -56,6 +56,7 @@ button:hover {
 
 .character-grid {
   display: grid;
+  align-self: center;
   grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   margin-top: 10px;
@@ -67,6 +68,7 @@ button:hover {
   padding: 12px;
   cursor: pointer;
   background: #000000;
+  height:max-content;
 }
 
 .character-card:hover {
@@ -540,9 +542,15 @@ progress::-moz-progress-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin: 20px auto;
+  margin: 0 auto;
   max-width: 600px;
   width: 100%;
+}
+
+#player-character-grid {
+  justify-content: center;
+  align-items: center;
+  grid-auto-rows:1fr;
 }
 
 .character-tile {

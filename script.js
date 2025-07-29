@@ -54,12 +54,6 @@ function selectPlayerChoiceScreen() {
         alert("Please enter your name.");
         return;
     }
-    //   Check if a character is selected
-    const selectedCharacter = document.querySelector('input[name="character"]:checked');
-    if (!selectedCharacter) {
-        alert("Please select a character.");
-        return;
-    }
     gameState.internName = name;
     currentScreen = "player-choice-screen";
     document.getElementById('start-screen').classList.add('hidden');
