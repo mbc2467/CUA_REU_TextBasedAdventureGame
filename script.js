@@ -1964,6 +1964,107 @@ normalEvents = [
                 ]
             }
         ]
+    },
+    {
+        id:"TornadoWarning",
+        title:"Tornado Warning",
+        weekRange:[6,7,8],
+        description:"A tornado warning is issued for the area and CUA sends out an alert to all students",
+        choices:[
+            {
+                text:"Head to the nearest basement with the other interns",
+                outcomes:[
+                    {
+                        resultText:"You all huddle together and play cards while waiting it out.",
+                        chance: 50,
+                        weight: [1,1,0,0],
+                        effects: [+2,+3,0,0]
+                    },
+                    {
+                        resultText:"You end up in a storage room with no windows and no signal.",
+                        chance: 20,
+                        weight: [1,1,0,0],
+                        effects: [-1,0,+2,0]
+                    },
+                    {
+                        resultText:"You get to meet some other interns from different programs and exchange stories.",
+                        chance: 30,
+                        weight: [1,1,0,0],
+                        effects: [+3,+2,0,0]
+                    }
+                ]
+            },
+            {
+                text:"Stay in your dorm and hope for the best",
+                outcomes:[
+                    {
+                        resultText:"You hear the wind howling outside but nothing happens.",
+                        chance: 25,
+                        weight: [1,1,0,0],
+                        effects: [+1,0,+1,0]
+                    },
+                    {
+                        resultText:"A branch crashes through your window and a squirrel gets in.",
+                        chance: 5,
+                        weight: [1,1,0,0],
+                        effects: [-3,0,+4,0]
+                    },
+                    {
+                        resultText:"You end up binge-watching a show and forget about the warning.",
+                        chance: 30,
+                        weight: [1,1,0,0],
+                        effects: [+2,+2,-2,0]
+                    },
+                    {
+                        resultText:"You take the time to catch up on your project and make some good progress.",
+                        chance: 20,
+                        weight: [0.5,1,0.5,0],
+                        effects: [0,+2,0,+4]
+                    },
+                    {
+                        resultText:"The power goes out and you have to use votive candles to see.",
+                        chance: 20,
+                        weight: [1,1,0,0],
+                        effects: [-2,0,+2,0]
+                    }
+                ]
+            },
+            {
+                text:"Go outside and collect data for your 'human resistance to airborne debris' thesis",
+                outcomes:[
+                    {
+                        resultText:"You get some interesting data but also a concussion from a flying branch.",
+                        chance: 10,
+                        weight: [1,1,1,0],
+                        effects: [-5,-5,0,0]
+                    },
+                    {
+                        resultText:"You try to count debris impacts but lose track after the fifth squirrel",
+                        chance: 30,
+                        weight: [1,1,1,0],
+                        effects: [+1,-3,0,0]
+                    },
+                    {
+                        resultText:"You try to categorize debris by impact force, but your only units are 'ouch' and 'that hurt'.",
+                        chance: 25,
+                        weight: [1,1,1,0],
+                        effects: [0,+1,+2,0]
+                    },
+                    {
+                        resultText:"A flying notebook opens mid-air and you accidentally derive a turbulence equation.",
+                        chance: 20,
+                        weight: [1,1,1,0],
+                        effects: [+3,+2,0,+1]
+                    },
+                    {
+                        resultText:"A Styrofoam cup hits you and bounces off harmlessly.",
+                        chance: 15,
+                        weight: [1,1,1,0],
+                        effects: [+2,0,0,0]
+                    }
+                ]
+            }
+        ]
     }
 ]
 globalMeetingEvents=[ // List of global meetings that can each happen every week
@@ -2030,14 +2131,23 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
 ]
 majorEvents=[
     {
+        id:"UMDVisit",
+        title:"Visit to Unvirsity of Maryland",
+        weekRange:[8],
+        description:"You and the other interns visit the University of Maryland and their REU program",
+        choices:[]
+    },
+    {
         id:"finalPresentationCheckpoint",
         title:"Practice Session for Final Presentation",
         weekRange:[9],
+        choices:[]
     },
     {
         id:"finalPresentation",
         title:"Final Presenation",
         weekRange:[10],
+        choices:[]
     }
 ]
 labSpecificEvents=[
