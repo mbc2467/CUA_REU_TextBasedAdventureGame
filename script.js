@@ -2304,7 +2304,38 @@ function loadNextGenericWeekEvent() {
 }
 
 
+debugEventCounting(); // Call this function to log the event coverage for debugging purposes
 
+function debugEventCounting() {
+    weeklyEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0]; // index 0 is unused, so week 1 starts at index 1
+
+    introEvents.forEach(event => {
+        event.weekRange.forEach(week => {
+            if (week >= 1 && week <= 10) {
+                weeklyEventCoverage[week]++;
+            }
+        });
+    });
+
+    normalEvents.forEach(event => {
+        event.weekRange.forEach(week => {
+            if (week >= 1 && week <= 10) {
+                weeklyEventCoverage[week]++;
+            }
+        });
+    });
+
+    majorEvents.forEach(event => {
+        event.weekRange.forEach(week => {
+            if (week >= 1 && week <= 10) {
+                weeklyEventCoverage[week]++;
+            }
+        });
+    });
+
+    console.log("Event Coverage: " + weeklyEventCoverage);
+    return;
+}
 
 
 function getRandomIntInclusive(min,max) {

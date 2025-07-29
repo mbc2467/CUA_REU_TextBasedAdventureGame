@@ -12,6 +12,7 @@ IDEAS:
 - calli/high schooler arrives in the 6th week
 - hostile walking priest encounter on campus
 - calling ms leslie
+- tornado warning
 
 
 CUSTOM EVENT CHOICES FOR SPECIFIC PEOPLE:
