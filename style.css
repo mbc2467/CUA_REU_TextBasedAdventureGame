@@ -65,12 +65,27 @@ button:hover {
   line-height: 16px;
 }
 
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
 .character-card {
+  width: 180px;
+  height: 280px; /* uniform tile height */
   border: 2px solid #ffffff;
   padding: 12px;
   cursor: pointer;
   background: #000000;
-  height:max-content;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .character-card:hover {
@@ -78,9 +93,12 @@ button:hover {
 }
 
 .character-card img {
-  width: 60%;
+  width: 60%;         /* your original image width */
+  max-height: 150px;  /* constrain height for layout consistency */
   height: auto;
+  object-fit: contain;
   border-radius: 0;
+  margin: 0 auto;     /* centers image horizontally */
 }
 
 .character-card.selected {
