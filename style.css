@@ -19,9 +19,9 @@ body {
 .panel {
     border: 4px solid #ffffff;
     padding: 2rem;
+    padding-top: 1rem;
     line-height: 1.5;
     background-color: #000000;
-    box-shadow: inset 0 0 10px #ffffff;
 }
 
 button {
@@ -54,12 +54,57 @@ button:hover {
     gap:10px;
 }
 
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+  line-height: 16px;
+}
+
+.character-card {
+  border: 2px solid #ffffff;
+  padding: 12px;
+  cursor: pointer;
+  background: #000000;
+}
+
+.character-card:hover {
+  border-color: #00ff99;
+}
+
+.character-card img {
+  width: 60%;
+  height: auto;
+  border-radius: 0;
+}
+
+.character-card.selected {
+  border-color: #ffffff;
+  background-color: #888;
+}
+
+.character-grid h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.character-grid p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+}
+
+
 .title-bar {
     display: flex;
     align-items: center;
     position: relative;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0px 10px;
 }
 
 .start-buttons {
@@ -326,7 +371,7 @@ button:hover {
   flex-direction: column;
   height: 100%;
   border: 4px solid #00ff99;
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 .main-content {
@@ -371,7 +416,6 @@ button:hover {
     padding: 0.5rem 1rem;
     font-family: 'Press Start 2P', monospace;
     cursor: pointer;
-    transition: background-color 0.2s;
     width: fit-content;
 }
 

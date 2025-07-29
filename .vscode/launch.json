@@ -9,7 +9,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open main.html",
-            "file": "/workspaces/CUA_REU_Game/main.html"
+            "file": "${workspaceFolder}/main.html"
         }
     ]
 }

@@ -47,6 +47,10 @@ function selectNameScreen() {
     document.getElementById('player-choice-screen').classList.add('hidden');
 }
 function selectPlayerChoiceScreen() {
+    const name = document.getElementById("playerName").value.trim();
+    console.log("PLAYER NAME: " + name);
+    if(name === "") return;
+    gameState.internName = name;
     currentScreen = "player-choice-screen";
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('choose-name-screen').classList.add('hidden');
@@ -58,12 +62,12 @@ function selectPlayerChoiceScreen() {
     document.getElementById('player-choice-screen').classList.remove('hidden');
 }
 function selectResearchScreen() {
+    if(gameState.character === null) {
+        console.log("No character selected");
+        return;
+    }
+    console.log("Selected Character Card: " + gameState.character);
     currentScreen = "choose-research-screen";
-    const name = document.getElementById("playerName").value.trim();
-    console.log("PLAYER NAME: " + name);
-    if(name === "") return;
-    gameState.internName = name;
-    console.log(gameState.internName);
     document.getElementById('start-screen').classList.add('hidden');
     document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.remove('hidden');
@@ -126,7 +130,7 @@ document.querySelectorAll(".home-button-main").forEach(button => {
 });
 document.getElementById("confirmYes").addEventListener("click", () => {
     document.getElementById("confirmOverlay").classList.add("hidden");
-    startScreen();
+    //startScreen();
     window.location.reload();
 });
 document.getElementById("confirmNo").addEventListener("click", () => {
@@ -146,8 +150,11 @@ document.getElementById("instructionsBack").addEventListener("click", () => {
     document.getElementById("instructionsOverlay").classList.add("hidden");
 });
 
+
+
 const gameState = {
     internName: "",     // to be filled after name entry
+    character: null, // to hold selected character information
     researchChoices: [], // to hold the selected fields
     field: "",          // assigned research field
     assignedMentor: null,       // assigned mentor object
@@ -164,13 +171,17 @@ const gameState = {
 // DEBUG INITIALIZE STATS I DONT THINK ITS WORKING RIGHT
 function initializeStats(){
     console.log("INITIALIZING STATS");
-    researchAreaRank = 0;
-    if(gameState.field === gameState.researchChoices[0]) researchAreaRank = 1;
-    else if(gameState.field === gameState.researchChoices[1]) researchAreaRank = 2;
-    else if(gameState.field === gameState.researchChoices[3]) researchAreaRank = 3;
-    else researchAreaRank = 4;
+    console.log("Research Field: " + gameState.field);
+    console.log("Selected Research Areas: " + selectedResearchAreas);
 
     gameState.stats.researchProgress = 0;
+
+    researchAreaRank = 4; //TEMP NEED TO FIX assignMentor() first
+    if(gameState.field === selectedResearchAreas[0]) researchAreaRank = 1;
+    if(gameState.field === selectedResearchAreas[1]) researchAreaRank = 2;
+    if(gameState.field === selectedResearchAreas[2]) researchAreaRank = 3;
+
+    console.log("Research Area Rank: " + researchAreaRank);
 
     switch(researchAreaRank) {
         case 1:
@@ -195,6 +206,68 @@ function initializeStats(){
             break;
     }
 }
+
+characterPool = {
+    archie:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    celine:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    emma:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    jacob:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    james:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    mallory:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    marlena:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    },
+    walker:{
+        events:[],
+        eventChoices:[],
+        eventOutcomes:[]
+    }
+}
+
+const cards = document.querySelectorAll(".character-card");
+
+cards.forEach(card => {
+    card.addEventListener("click", () => {
+        // Unselect previous
+        cards.forEach(c => c.classList.remove("selected"));
+        // Select new
+        card.classList.add("selected");
+
+        // Get data-id from the selected card
+        const characterId = card.dataset.id;
+
+        // Update gameState
+        gameState.character = characterPool[characterId];
+        console.log("Selected Character: ", characterId, gameState.character);
+  });
+});
+
 
 const researchAreas = [
     "Astrophysics", "Biophysics", "Computational", "Materials Science", "Nuclear", "Particle"
@@ -257,23 +330,27 @@ const mentorPool = {
     "Astrophysics": [
         {
             name: "Dr. Duilia F. de Mello",
-            research: "Astrophysics",
+            field: "Astrophysics",
+            research: "Astrophysics", // UPDATE
             researchDescription: "Observational and theoretical studies of galaxy formation and evolution through multi‑wavelength surveys."
         },
         {
             name: "Dr. Steve Kraemer",
-            research: "Astrophysics",
+            field: "Astrophysics",
+            research: "Astrophysics", // UPDATE
             researchDescription: "Solar physics and active galactic nuclei studies in collaboration with NASA Goddard Space Flight Center."
         }
     ],
     "Biophysics": [
         {
             name: "Dr. Abhijit Sarkar",
+            field: "Biophysics",
             research: "Single-Molecule Biophysics",
             researchDescription: "Experimental studies using magnetic tweezers to probe DNA‑protein interactions at the single‑molecule level."
         },
         {
             name: "Dr. John Philip",
+            field: "Biophysics",
             research: "Glass Physics in Biology",
             researchDescription: "Investigation of glassy biological materials and their nanostructured physical properties in the Vitreous State Laboratory."
         }
@@ -281,16 +358,19 @@ const mentorPool = {
     "Computational": [
         {
             name: "Dr. Vadim Uritsky",
-            research: "Computational Astrophysics",
+            field: "Computational Physics",
+            research: "Computational Astrophysics", // UPDATE
             researchDescription: "Numerical modeling of heliophysics and space weather phenomena using high‑performance computing tools."
         },
         {
             name: "Dr. Tommy Wiklind",
+            field: "Computational Physics",
             research: "Computational Astronomy",
             researchDescription: "Computational analysis of transiting exoplanet atmospheres with space telescope data."
         },
         {
             name:"Dr. Nicholas Mecholsky",
+            field: "Computational Physics",
             research: "Computational Materials Science",
             researchDescription: "Models quantum mechanical properties of nanostructures and strongly correlated systems."
         }
@@ -298,16 +378,19 @@ const mentorPool = {
     "Materials Science": [
         {
             name: "Dr. Ian L. Pegg",
+            field: "Materials Science",
             research: "Glassy Materials and Waste Form Science",
             researchDescription: "Leads research on nuclear waste vitrification and glass structure analysis."
         },
         {
             name: "Dr. Biprodas Dutta",
+            field: "Materials Science",
             research: "Nanofabrication and Spintronics",
             researchDescription: "Develops nanoscale materials and devices for emerging electronic applications."
         },
         {
             name: "Dr. Nicholas Mecholsky",
+            field: "Materials Science",
             research: "Computational Materials Science",
             researchDescription: "Models quantum mechanical properties of nanostructures and strongly correlated systems."
         }
@@ -315,16 +398,19 @@ const mentorPool = {
     "Nuclear": [
         {
             name: "Dr. Tanja Horn",
+            field: "Nuclear Physics",
             research: "Experimental Nuclear Physics",
             researchDescription: "Conducts experiments at Jefferson Lab exploring nucleon structure and meson production."
         },
         {
             name: "Dr. Grzegorz Kalicy",
+            field: "Nuclear Physics",
             research: "Hadronic Physics and Spectroscopy",
             researchDescription: "Studies meson spectroscopy and detector systems for high-energy experiments."
         },
         {
             name: "Dr. Carlos Yero",
+            field: "Nuclear Physics",
             research: "Nuclear Structure and Reaction Studies",
             researchDescription: "Investigates nuclear scattering processes and quark-gluon interactions in nuclei."
         }
@@ -332,11 +418,13 @@ const mentorPool = {
     "Particle": [
         {
             name: "Dr. Rachel Bartek",
+            field: "Particle Physics",
             research: "Experimental High-Energy Physics",
             researchDescription: "High‑energy particle physics research through collaborations at CERN and detector analysis."
         },
         {
             name: "Dr. Aaron Dominguez",
+            field: "Particle Physics",
             research: "Collider Physics and Instrumentation",
             researchDescription: "Contributions to experiments in high energy physics and data analysis from collider experiments."
         }
@@ -348,26 +436,27 @@ function assignMentor() {
     const weights = new Map();
 
     // Assign weights to preferred fields
-    if (selectedResearchAreas[0]) weights.set(selectedResearchAreas[0], 60);
-    if (selectedResearchAreas[1]) weights.set(selectedResearchAreas[1], 25);
-    if (selectedResearchAreas[2]) weights.set(selectedResearchAreas[2], 10);
+    if (selectedResearchAreas[0]) weights.set(selectedResearchAreas[0], 600);
+    if (selectedResearchAreas[1]) weights.set(selectedResearchAreas[1], 250);
+    if (selectedResearchAreas[2]) weights.set(selectedResearchAreas[2], 100);
 
     // Assign small weights to all other fields (optional)
     const leftoverFields = allFields.filter(f => !weights.has(f));
-    const leftoverWeight = 5; // 5% total chance
+    const leftoverWeight = 50; // 5% total chance
     const perFieldWeight = leftoverWeight / leftoverFields.length;
     leftoverFields.forEach(f => weights.set(f, perFieldWeight));
 
     // Create weighted field array
     const weightedFields = [];
     for (const [field, weight] of weights.entries()) {
-        for (let i = 0; i < weight; i++) {
-        weightedFields.push(field);
+        for (let i = 0; i < Math.round(weight); i++) {
+            weightedFields.push(field);
         }
     }
 
     // Randomly choose field
     const chosenField = weightedFields[Math.floor(Math.random() * weightedFields.length)];
+    console.log("Chosen Research Field: " + chosenField);
 
     // Randomly pick a mentor from that field
     const mentorOptions = mentorPool[chosenField];
@@ -382,14 +471,16 @@ function assignMentor() {
 function displayMentorInfo() {
     const m = gameState.assignedMentor;
     const info1 = `
-        You’ve been matched with <strong>${m.name}</strong>
+        You’ve been matched with\n<strong>${m.name}</strong>
     `;
-    const info2 = 'Research Area: ' + m.research;
-    const info3 = 'Description: ' + m.researchDescription;
+    const info2 = 'Research Field:' + m.field;
+    const info3 = 'Research Area: ' + m.research;
+    const info4 = 'Description: ' + m.researchDescription;
 
     document.getElementById("mentor-info").innerHTML = info1; 
-    document.getElementById("mentor-research-field").innerHTML = info2; 
-    document.getElementById("mentor-research-description").innerHTML = info3; 
+    document.getElementById("mentor-research-field").innerHTML = info2;
+    document.getElementById("mentor-research-area").innerHTML = info3; 
+    document.getElementById("mentor-research-description").innerHTML = info4; 
 }
 
 function updateUI() {
@@ -495,7 +586,7 @@ introEvents = [
                 outcomes: [
                     {
                         resultText: "They stare forward with a dead look in their eyes.",
-                        chance: 10, // %
+                        chance: 20, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [0,-3,+3,0]
                     },
@@ -507,7 +598,7 @@ introEvents = [
                     },
                     {
                         resultText: "You appreciate how passionate they are about their research.",
-                        chance: 65, // %
+                        chance: 55, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [+2,+5,0,0]
                     }
@@ -642,7 +733,7 @@ introEvents = [
                         effects: [0,0,+1,0]
                     },
                     {
-                        resultText: "Your sar+casm doesn't vibe with the others.",
+                        resultText: "Your sarcasm doesn't vibe with the others.",
                         chance: 10, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [-1,0,+2,0]
@@ -1726,7 +1817,13 @@ majorEvents=[
         weekRange:[10],
     }
 ]
+labSpecificEvents=[
+    {
 
+    }
+]
+    
+    
 /*
 EVENT PLANNING
 week 1: 1 intro + 1 normal
