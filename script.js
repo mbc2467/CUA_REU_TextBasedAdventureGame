@@ -169,8 +169,10 @@ const gameState = {
         researchProgress: 0
     },
     currentWeek: 0,
-    totalWeeks: 10
+    totalWeeks: 10,
+    usedEventIDs: null,
 };
+gameState.usedEventIds = new Set(); // Track event IDs that have already been used
 
 // DEBUG INITIALIZE STATS I DONT THINK ITS WORKING RIGHT
 function initializeStats(){
@@ -2282,14 +2284,30 @@ function loadGlobalMeetingEvent() {
 
 function genericWeekEvents() {
     console.log("Beginning week " + gameState.currentWeek + " events");
-    numEventsTilNextWeek = getRandomIntInclusive(3,5);
-    console.log(numEventsTilNextWeek + " events in week  " + gameState.currentWeek);
 
+    const currentWeek = gameState.currentWeek;
+
+    // Filter events that (1) match the week AND (2) haven't been used yet
+    const validEvents = normalEvents.filter(event => 
+        event.weekRange.includes(currentWeek) &&  // Check if the event is in the current week
+        !gameState.usedEventIds.has(event.id) // Check if the event ID has not been used yet
+    );
+    console.log("Filtered valid events for week " + currentWeek + ": " + validEvents.length);
+
+    // Select a random number of events for the week
+    numEventsTilNextWeek = Math.min(getRandomIntInclusive(3, weeklyEventCoverage[currentWeek]), validEvents.length);
+    console.log(numEventsTilNextWeek + " events will occur this week");
+
+    // Shuffle and slice to create the event queue
     weekEventQueue = [];
-    const shuffled = [...normalEvents].sort(() => 0.5 - Math.random());
+    const shuffled = [...validEvents].sort(() => 0.5 - Math.random());
     weekEventQueue = shuffled.slice(0, numEventsTilNextWeek);
-    console.log("successfully shuffled and sliced temp events");
+    console.log("Successfully prepared week event queue:", weekEventQueue.map(e => e.id));
 
+    // Mark selected events as used
+    weekEventQueue.forEach(event => gameState.usedEventIds.add(event.id));
+
+    // Load the first event
     loadNextGenericWeekEvent();
 }
 
@@ -2304,17 +2322,21 @@ function loadNextGenericWeekEvent() {
 }
 
 
+let weeklyEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0]; // index 0 is unused, so week 1 starts at index 1
 debugEventCounting(); // Call this function to log the event coverage for debugging purposes
-
 function debugEventCounting() {
-    weeklyEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0]; // index 0 is unused, so week 1 starts at index 1
-
+    /*
     introEvents.forEach(event => {
         event.weekRange.forEach(week => {
             if (week >= 1 && week <= 10) {
                 weeklyEventCoverage[week]++;
             }
         });
+    });
+    */
+
+    introEvents.forEach(event => {
+        weeklyEventCoverage[1]++;
     });
 
     normalEvents.forEach(event => {
