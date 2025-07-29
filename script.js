@@ -276,7 +276,7 @@ cards.forEach(card => {
 
 
 const researchAreas = [
-    "Astrophysics", "Biophysics", "Computational", "Materials Science", "Nuclear", "Particle"
+    "Astrophysics", "Biophysics", "Computational Physics", "Materials Science", "Nuclear Physics", "Particle Physics"
 ]
 const selectedResearchAreas = []; // max 3
 const maxSelections = 3;
