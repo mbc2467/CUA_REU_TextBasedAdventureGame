@@ -13,6 +13,8 @@ IDEAS:
 - hostile walking priest encounter on campus
 - calling ms leslie
 - tornado warning
+- Sarkar runs into Marlena, Walker and Archie in the stairwell when they are singing "Star-Spangled Banner" (Fergie's Version)
+
 
 
 CUSTOM EVENT CHOICES FOR SPECIFIC PEOPLE:
