@@ -424,7 +424,7 @@ const mentorPool = {
     ],
     "Particle Physics": [
         {
-            name: "Dr. Rachel Bartek",
+            name: "Dr. Rachel Bartek", // SOMEONE FIX THIS !!!
             field: "Particle Physics",
             research: "Experimental High-Energy Physics",
             researchDescription: "High‑energy particle physics research through collaborations at CERN and detector analysis."
@@ -2066,6 +2066,9 @@ normalEvents = [
                 ]
             }
         ]
+    },
+    {
+
     }
 ]
 globalMeetingEvents=[ // List of global meetings that can each happen every week
@@ -2103,13 +2106,13 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
         id:"globalMeeting6",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
-        description:""
+        description:"You watch a twelve minute long video about how to break into finance as a physics major. The only notable takeaway is the following question that stays in your mind: How do you convince a one-club golfer to use the rest of the clubs in his bag? "
     },
     {
         id:"globalMeeting7",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
-        description:""
+        description:"You learn about common post-grad options for physics majors. They do well. Apparently, however, psychology majors have it rough"
     },
     {
         id:"globalMeeting8",
