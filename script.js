@@ -1705,100 +1705,100 @@ normalEvents = [
             }
         ]
     },
-    {
-        id: "3Dprinting",
-        title: "Abusing the 3D printer",
-        weekRange: [4,5,6,7,8,9],
-        description: "You want to use the 3D printer to make something, but you can't decide what.",
-        choices:[
-            {
-                text: "Print out a 20-cigarette holder to gift to your friend",
-                outcomes:[
-                    {
-                        resultText: "Dr. Yero catches you and thinks it's funny.",
-                        chance: 30,
-                        weight: [1,1,1,1],
-                        effects: [+7,+2,-2,0]
-                    },
-                    {
-                        resultText: "You give it to your friend and they love it.",
-                        chance: 60,
-                        weight: [1,1,1,1],
-                        effects: [+5,+2,-2,0]
-                    },
-                    {
-                        resultText: "You try to print it, but end up breaking the printer (it explodes and bursts into flames).",
-                        chance: 10,
-                        weight: [1,1,1,1],
-                        effects: [-10,-4,+4,-2]
-                    }
-                ]
-            },
-            {
-                text: "Print out a model of the Eiffel Tower as a gift to Dr. Yero.",
-                outcomes:[
-                    {
-                        resultText: "Dr. Yero loves the gesture!",
-                        chance: 60,
-                        weight: [1,1,1,1],
-                        effects: [+5,+5,-4,0]
-                    },
-                    {
-                        resultText: "Dr. Yero is confused, but thanks you anyways.",
-                        chance: 30,
-                        weight: [1,1,1,1],
-                        effects: [+2,+2,0,0]
-                    },
-                    {
-                        resultText: "The filament spaghettifies when printing the Tower's intricacies, so you have to spend time repairing it.",
-                        chance: 10,
-                        weight: [1,1,1,1],
-                        effects: [-5,-4,+3,-3]
-                    }
-                ]
-            },
-            {
-                text: "Print out a bust of Walker as a joke.",
-                outcomes: [
-                    {
-                        resultText: "Walker thinks its funny and puts it up on a shelf to oversee the lab.",
-                        chance: 85,
-                        weight: [1,1,1,1],
-                        effects: [+3,+3,-2,+2]
-                    },
-                    {
-                        resultText: "The 3D printer can't handle Walker's immaculate beauty and self-destructs.",
-                        chance: 15,
-                        weight: [1,1,1,1],
-                        effects: [-4,-1,+3,0]
-                    }
-                ]
-            },
-            {
-                text: "Print out a TheRocktopus™.",
-                outcomes:[
-                    {
-                        resultText: "Dr. Yero sees it and is both confused and concerned.",
-                        chance: 60,
-                        weight: [1,1,1,1],
-                        effects: [+3,+3,0,0]
-                    },
-                    {
-                        resultText: "TheRocktopus™ is beautiful. TheRocktopus™ is great. TheRocktopus™ is perfect.",
-                        chance: 30,
-                        weight: [1,1,1,1],
-                        effects: [+7,+3,-3,0]
-                    },
-                    {
-                        resultText: "TheRocktopus™ coaches you on how to best progress on your research project, leading to a huge breakthrough.",
-                        chance: 10,
-                        weight: [1,1,1,1],
-                        effects: [+2,+3,-2,+8]
-                    }
-                ]
-            }
-        ]
-    },
+    // {
+        // id: "3Dprinting",
+        // title: "Abusing the 3D printer",
+        // weekRange: [4,5,6,7,8,9],
+        // description: "You want to use the 3D printer to make something, but you can't decide what.",
+        // choices:[
+            // {
+                // text: "Print out a 20-cigarette holder to gift to your friend",
+                // outcomes:[
+                    // {
+                        // resultText: "Dr. Yero catches you and thinks it's funny.",
+                        // chance: 30,
+                        // weight: [1,1,1,1],
+                        // effects: [+7,+2,-2,0]
+                    // },
+                    // {
+                        // resultText: "You give it to your friend and they love it.",
+                        // chance: 60,
+                        // weight: [1,1,1,1],
+                        // effects: [+5,+2,-2,0]
+                    // },
+                    // {
+                        // resultText: "You try to print it, but end up breaking the printer (it explodes and bursts into flames).",
+                        // chance: 10,
+                        // weight: [1,1,1,1],
+                        // effects: [-10,-4,+4,-2]
+                    // }
+                // ]
+            // },
+            // {
+                // text: "Print out a model of the Eiffel Tower as a gift to Dr. Yero.",
+                // outcomes:[
+                    // {
+                        // resultText: "Dr. Yero loves the gesture!",
+                        // chance: 60,
+                        // weight: [1,1,1,1],
+                        // effects: [+5,+5,-4,0]
+                    // },
+                    // {
+                        // resultText: "Dr. Yero is confused, but thanks you anyways.",
+                        // chance: 30,
+                        // weight: [1,1,1,1],
+                        // effects: [+2,+2,0,0]
+                    // },
+                    // {
+                        // resultText: "The filament spaghettifies when printing the Tower's intricacies, so you have to spend time repairing it.",
+                        // chance: 10,
+                        // weight: [1,1,1,1],
+                        // effects: [-5,-4,+3,-3]
+                    // }
+                // ]
+            // },
+            // {
+                // text: "Print out a bust of Walker as a joke.",
+                // outcomes: [
+                    // {
+                        // resultText: "Walker thinks its funny and puts it up on a shelf to oversee the lab.",
+                        // chance: 85,
+                        // weight: [1,1,1,1],
+                        // effects: [+3,+3,-2,+2]
+                    // },
+                    // {
+                        // resultText: "The 3D printer can't handle Walker's immaculate beauty and self-destructs.",
+                        // chance: 15,
+                        // weight: [1,1,1,1],
+                        // effects: [-4,-1,+3,0]
+                    // }
+                // ]
+            // },
+            // {
+                // text: "Print out a TheRocktopus™.",
+                // outcomes:[
+                    // {
+                        // resultText: "Dr. Yero sees it and is both confused and concerned.",
+                        // chance: 60,
+                        // weight: [1,1,1,1],
+                        // effects: [+3,+3,0,0]
+                    // },
+                    // {
+                        // resultText: "TheRocktopus™ is beautiful. TheRocktopus™ is great. TheRocktopus™ is perfect.",
+                        // chance: 30,
+                        // weight: [1,1,1,1],
+                        // effects: [+7,+3,-3,0]
+                    // },
+                    // {
+                        // resultText: "TheRocktopus™ coaches you on how to best progress on your research project, leading to a huge breakthrough.",
+                        // chance: 10,
+                        // weight: [1,1,1,1],
+                        // effects: [+2,+3,-2,+8]
+                    // }
+                // ]
+            // }
+        // ]
+    // },
     {
         id:"BaltimoreTrip",
         title: "Day-Trip to Baltimore",
@@ -2454,29 +2454,28 @@ function nextTurn() {
         loadNextGenericWeekEvent();
     }
 }
-
 function nextWeek() {
+    /*
+    if(gameState.currentWeek == 1) {
+        console.log("week 2 coming soon :)");
+        return;
+    } 
+    */
     document.getElementById('nextWeek-button').classList.add('hidden');
     document.getElementById('nextTurn-button').classList.add('hidden');
-
-    // End of game check
-    if (gameState.currentWeek >= gameState.totalWeeks) {
-        document.getElementById("eventText").textContent = "Congratulations! You've finished the program.";
-        document.getElementById("eventDescription").textContent = "";
-        document.getElementById("choicePanel").innerHTML = "";
-        document.getElementById("eventResult").classList.add("hidden");
-        return;
-    }
-
+    // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
     gameState.currentWeek++;
+    console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
     document.getElementById("currentWeek").textContent = gameState.currentWeek;
     document.getElementById("weekBar").value = gameState.currentWeek;
-    document.getElementById("weeksLeft").textContent = gameState.totalWeeks - gameState.currentWeek;
-
+    document.getElementById("weeksLeft").textContent = 10 - gameState.currentWeek;
     if(gameState.currentWeek == 1) {
         weekOneEvents();
-    } else {
+    }
+    else {
+        // week 2-10 events
+        console.log("Loading Week " + gameState.currentWeek + " events");
         genericWeekEvents();
     }
     updateNextWeekButton();
@@ -2504,17 +2503,10 @@ function genericWeekEvents() {
     console.log("Filtered valid events for week " + currentWeek + ": " + validEvents.length);
 
     // If no valid events, just finish the week
-        // If no valid events, just finish the week
     if (validEvents.length === 0) {
         weekEventQueue = [];
         numEventsTilNextWeek = 0;
-        // Show message for no events (optional)
-        document.getElementById("eventText").textContent = "No more events this week.";
-        document.getElementById("eventDescription").textContent = "Click 'Next Week' to continue.";
-        document.getElementById("choicePanel").innerHTML = "";
-        document.getElementById("eventResult").classList.add("hidden");
-        document.getElementById('nextWeek-button').classList.remove('hidden');
-        document.getElementById('nextTurn-button').classList.add('hidden');
+        loadNextGenericWeekEvent();
         return;
     }
 
