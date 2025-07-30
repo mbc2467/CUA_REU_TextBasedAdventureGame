@@ -256,8 +256,83 @@ cards.forEach(card => {
 
 
 const researchAreas = [
-    "Astrophysics", "Biophysics", "Computational Physics", "Materials Science", "Nuclear Physics", "Particle Physics"
+    "Biophysics", "Computational Physics", "Materials Science", "Nuclear Physics", "Particle Physics"
 ]
+// Abhijit Sarkar (bio), Grzegorz Kalicy (nuclear), Biprodas Dutta (material science)
+// Carlos Yero (nuclear), Tanja Horn (nuclear), Nicholas Mecholsky
+// 
+const mentorPool = {
+    "Biophysics": [
+        {
+            name: "Dr. Abhijit Sarkar", // jacob
+            field: "Biophysics",
+            research: "Single-Molecule Biophysics",
+            researchDescription: "Elasticity of DNA and DNA-Histone Complexes Under Physiological and High-Salt Conditions: A Horizontal Magnetic Tweezers Study."
+        },
+        {
+            name: "Dr. Abhijit Sarkar", // mallory
+            field: "Computational Physics",
+            research: "Single-Molecule Biophysics",
+            researchDescription: "GPU-Accelerated Bead Tracking Program for Magnetic Tweezer Experiments."
+        },
+    ],
+    "Computational Physics": [
+        {
+            name: "Dr. Abhijit Sarkar", // mallory
+            field: "Computational Physics",
+            research: "Single-Molecule Biophysics",
+            researchDescription: "GPU-Accelerated Bead Tracking Program for Magnetic Tweezer Experiments."
+        },
+        {
+            name:"Dr. Nicholas Mecholsky", // celine
+            field: "Computational Physics",
+            research: "Computational Materials Science",
+            researchDescription: "Computing Raman-Active Vibrational Frequencies of Amorphous Silica with DFT."
+        }
+    ],
+    "Materials Science": [
+        {
+            name: "Dr. Biprodas Dutta", // james
+            field: "Materials Science",
+            research: "Nanofabrication and Spintronics",
+            researchDescription: "Investigating Electrical Properties of 40Li2O•(55−x)B2O3•(x)P2O5•5LiCl Glasses."
+        },
+        {
+            name: "Dr. Nicholas Mecholsky", // celine
+            field: "Materials Science",
+            research: "Computational Materials Science",
+            researchDescription: "Computing Raman-Active Vibrational Frequencies of Amorphous Silica with DFT."
+        }
+    ],
+    "Nuclear Physics": [
+        {
+            name: "Dr. Tanja Horn", // archie
+            field: "Nuclear Physics",
+            research: "Experimental Nuclear Physics",
+            researchDescription: "Reconstruction Analysis of Kaon Structure Functions via Tagged Deep Inelastic Scattering."
+        },
+        {
+            name: "Dr. Grzegorz Kalicy", // marlena
+            field: "Nuclear Physics",
+            research: "Hadronic Physics and Spectroscopy",
+            researchDescription: "Simulation-Based Optimization of xpDIRC Geometry for Next-Generation PID."
+        },
+        {
+            name: "Dr. Carlos Yero", // walker
+            field: "Nuclear Physics",
+            research: "Nuclear Structure and Reaction Studies",
+            researchDescription: "Kinematic Optimization of SHMS and HMS in Hydrogen Elastic Events for Deuteron Electro-Disintegration Studies at JLab"
+        }
+    ],
+    "Particle Physics": [
+        {
+            name: "Dr. Shin Shan Yu", // emma
+            field: "Particle Physics",
+            research: "Collider Physics and Instrumentation",
+            researchDescription: "Study of hh+MET signature in type-I 2HDM+ and Searching for DarkMatter at the LHC."
+        }
+    ]
+};
 const selectedResearchAreas = []; // max 3
 const maxSelections = 3;
 // Initialize research area buttons
@@ -310,120 +385,15 @@ function updateSelectionDisplay() {
 
     researchAreas.forEach(area => {
         if (!selectedResearchAreas.includes(area)) {
-        const btn = document.createElement("button");
-        btn.classList.add("research-choice-button");
-        btn.innerText = area;
-        btn.dataset.area = area;
-        btn.onclick = () => handleAreaClick(area);
-        container.appendChild(btn);
+            const btn = document.createElement("button");
+            btn.classList.add("research-choice-button");
+            btn.innerText = area;
+            btn.dataset.area = area;
+            btn.onclick = () => handleAreaClick(area);
+            container.appendChild(btn);
         }
     });
 }
-
-const mentorPool = {
-    "Astrophysics": [
-        {
-            name: "Dr. Duilia F. de Mello",
-            field: "Astrophysics",
-            research: "Extragalactic Astronomy and Galaxy Evolution",
-            researchDescription: "Observational and theoretical studies of galaxy formation and evolution through multi‑wavelength surveys."
-        },
-        {
-            name: "Dr. Steve Kraemer",
-            field: "Astrophysics",
-            research: "Active Galactic Nuclei and Solar Physics",
-            researchDescription: "Solar physics and active galactic nuclei studies in collaboration with NASA Goddard Space Flight Center."
-        }
-    ],
-    "Biophysics": [
-        {
-            name: "Dr. Abhijit Sarkar",
-            field: "Biophysics",
-            research: "Single-Molecule Biophysics",
-            researchDescription: "Experimental studies using magnetic tweezers to probe DNA‑protein interactions at the single‑molecule level."
-        },
-        {
-            name: "Dr. John Philip",
-            field: "Biophysics",
-            research: "Glass Physics in Biology",
-            researchDescription: "Investigation of glassy biological materials and their nanostructured physical properties in the Vitreous State Laboratory."
-        }
-    ],
-    "Computational Physics": [
-        {
-            name: "Dr. Vadim Uritsky",
-            field: "Computational Physics",
-            research: "Computational Space Weather Modeling",
-            researchDescription: "Numerical modeling of heliophysics and space weather phenomena using high‑performance computing tools."
-        },
-        {
-            name: "Dr. Tommy Wiklind",
-            field: "Computational Physics",
-            research: "Computational Astronomy",
-            researchDescription: "Computational analysis of transiting exoplanet atmospheres with space telescope data."
-        },
-        {
-            name:"Dr. Nicholas Mecholsky",
-            field: "Computational Physics",
-            research: "Computational Materials Science",
-            researchDescription: "Models quantum mechanical properties of nanostructures and strongly correlated systems."
-        }
-    ],
-    "Materials Science": [
-        {
-            name: "Dr. Ian L. Pegg",
-            field: "Materials Science",
-            research: "Glassy Materials and Waste Form Science",
-            researchDescription: "Leads research on nuclear waste vitrification and glass structure analysis."
-        },
-        {
-            name: "Dr. Biprodas Dutta",
-            field: "Materials Science",
-            research: "Nanofabrication and Spintronics",
-            researchDescription: "Develops nanoscale materials and devices for emerging electronic applications."
-        },
-        {
-            name: "Dr. Nicholas Mecholsky",
-            field: "Materials Science",
-            research: "Computational Materials Science",
-            researchDescription: "Models quantum mechanical properties of nanostructures and strongly correlated systems."
-        }
-    ],
-    "Nuclear Physics": [
-        {
-            name: "Dr. Tanja Horn",
-            field: "Nuclear Physics",
-            research: "Experimental Nuclear Physics",
-            researchDescription: "Conducts experiments at Jefferson Lab exploring nucleon structure and meson production."
-        },
-        {
-            name: "Dr. Grzegorz Kalicy",
-            field: "Nuclear Physics",
-            research: "Hadronic Physics and Spectroscopy",
-            researchDescription: "Studies meson spectroscopy and detector systems for high-energy experiments."
-        },
-        {
-            name: "Dr. Carlos Yero",
-            field: "Nuclear Physics",
-            research: "Nuclear Structure and Reaction Studies",
-            researchDescription: "Investigates nuclear scattering processes and quark-gluon interactions in nuclei."
-        }
-    ],
-    "Particle Physics": [
-        {
-            name: "Dr. Rachel Bartek", // SOMEONE FIX THIS !!!
-            field: "Particle Physics",
-            research: "Experimental High-Energy Physics",
-            researchDescription: "High‑energy particle physics research through collaborations at CERN and detector analysis."
-        },
-        {
-            name: "Dr. Aaron Dominguez",
-            field: "Particle Physics",
-            research: "Collider Physics and Instrumentation",
-            researchDescription: "Contributions to experiments in high energy physics and data analysis from collider experiments."
-        }
-    ]
-};
 
 function assignMentor() {
     const allFields = Object.keys(mentorPool);
@@ -467,7 +437,7 @@ function displayMentorInfo() {
     const info1 = `
         You’ve been matched with\n<strong>${m.name}</strong>
     `;
-    const info2 = 'Research Field:' + m.field;
+    const info2 = 'Research Field: ' + m.field;
     const info3 = 'Research Area: ' + m.research;
     const info4 = 'Description: ' + m.researchDescription;
 
