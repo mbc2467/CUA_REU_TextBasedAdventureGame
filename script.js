@@ -2160,9 +2160,6 @@ normalEvents = [
                 ]
             }
         ]
-    },
-    {
-
     }
 ]
 globalMeetingEvents=[ // List of global meetings that can each happen every week
@@ -2502,16 +2499,8 @@ function genericWeekEvents() {
     );
     console.log("Filtered valid events for week " + currentWeek + ": " + validEvents.length);
 
-    // If no valid events, just finish the week
-    if (validEvents.length === 0) {
-        weekEventQueue = [];
-        numEventsTilNextWeek = 0;
-        loadNextGenericWeekEvent();
-        return;
-    }
-
-    // Select a random number of events for the week (at least 1)
-    numEventsTilNextWeek = Math.min(Math.max(getRandomIntInclusive(3, weeklyEventCoverage[currentWeek]), 1), validEvents.length);
+    // Select a random number of events for the week
+    numEventsTilNextWeek = Math.min(getRandomIntInclusive(3, weeklyEventCoverage[currentWeek]), validEvents.length);
     console.log(numEventsTilNextWeek + " events will occur this week");
 
     // Shuffle and slice to create the event queue
@@ -2533,9 +2522,7 @@ function loadNextGenericWeekEvent() {
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK " + gameState.currentWeek + " COMPLETE");
-        // Show the Next Week button so the player can continue
-        document.getElementById('nextWeek-button').classList.remove('hidden');
-        document.getElementById('nextTurn-button').classList.add('hidden');
+        // nextTurn(); // or whatever should happen after week 1
     }   
 }
 
@@ -2543,18 +2530,12 @@ function loadNextGenericWeekEvent() {
 let weeklyEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0]; // index 0 is unused, so week 1 starts at index 1
 debugEventCounting(); // Call this function to log the event coverage for debugging purposes
 function debugEventCounting() {
-    /*
     introEvents.forEach(event => {
         event.weekRange.forEach(week => {
             if (week >= 1 && week <= 10) {
                 weeklyEventCoverage[week]++;
             }
         });
-    });
-    */
-
-    introEvents.forEach(event => {
-        weeklyEventCoverage[1]++;
     });
 
     normalEvents.forEach(event => {
