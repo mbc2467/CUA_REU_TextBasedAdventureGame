@@ -8,230 +8,243 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="game-container">
-        <!--START SCREEN-->
-        <div class="panel" id="start-screen">
-            <h1>Can you Survive the CUA REU?</h1>
-            <div class="start-buttons">
-                <button style="font-size:40px; padding:16px 30px;" onclick="selectNameScreen()">New Game</button>
-                <div class="secondary-buttons">
-                    <button style="font-size:22px; padding:16px 30px;" onclick="creditsScreen()">Credits</button>
-                    <button class="instructions-button" onclick="instructionsScreen()">Instructions</button>
-                </div>
-            </div>
-        </div>
-        <!--NAME SCREEN-->
-        <div class="panel hidden" id="choose-name-screen" style="display:flex; flex-direction:column; align-items: center;">
-            <div class="title-bar">
-                <button class="home-button" onclick="triggerHome()">Home</button>
-                <div class="spacer"></div>
-                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                <div class="spacer" style="width:25px;"></div>
-                <h2>Can you Survive the CUA REU?</h2>
-            </div>
-            <div class="game-panel" style="width:500px;">
-                <p id="game-text-intro">Enter name to start:</p>
-                <input type="text" name="playerName" id="playerName" class="text-input" placeholder="your name">
-                <button onclick="selectPlayerChoiceScreen()">Next</button>
-            </div>
-        </div>
-        <!--PLAYER CHOICE SCREEN-->
-        <div class="panel hidden" id="player-choice-screen">
-            <div class="title-bar">
-                <button class="home-button" onclick="triggerHome()">Home</button>
-                <div class="spacer"></div>
-                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                <div class="spacer" style="width:25px;"></div>
-                <h2>Can you Survive the CUA REU?</h2>
-            </div>
-            <div class="game-panel">
-                <p id="game-text-intro">Choose a Playable Intern</p> <!--wording??-->
-                <div class="character-grid" id="player-character-grid">
-                    <div class="character-card" data-id="archie">
-                        <img src="characters/archie.png" alt="Character: Archie">
-                        <h3>Archie</h3>
-                        <p>French</p>
-                    </div>
-                    <div class="character-card" data-id="celine">
-                        <img src="characters/celine.png" alt="Character: Celine">
-                        <h3>Celine</h3>
-                        <p>description here</p>
-                    </div>
-                    <div class="character-card" data-id="emma">
-                        <img src="characters/emma.png" alt="Character: Emma">
-                        <h3>Emma</h3>
-                        <p>description here</p>
-                    </div>
-                    <div class="character-card" data-id="jacob">
-                        <img src="characters/jacob.png" alt="Character: Jacob">
-                        <h3>Jacob</h3>
-                        <p>description here</p>
-                    </div>
-                    <div class="character-card" data-id="james">
-                        <img src="characters/james.png" alt="Character: James">
-                        <h3>James</h3>
-                        <p>description here</p> 
-                    </div>
-                    <div class="character-card" data-id="mallory">
-                        <img src="characters/mallory.png" alt="Character: Mallory">
-                        <h3>Mallory</h3>
-                        <p>description here</p>
-                    </div>
-                    <div class="character-card" data-id="marlena">
-                        <img src="characters/marlena.png" alt="Character: Marlena">
-                        <h3>Marlena</h3>
-                        <p>description here</p>
-                    </div>
-                    <div class="character-card" data-id="walker">
-                        <img src="characters/walker.png" alt="Character: Walker">
-                        <h3>Walker</h3>
-                        <p>Skateboarding physicist</p>
+    <div id="temporaryBetaScreen">
+        <h3>BETA TESTING</h3>
+        <p>This project is still under development. You may encounter bugs or missing features.</p>
+        <form id="feedbackForm" action="https://formspree.io/f/mldllrjn" method="POST"> <!--gets sent to mallorys email-->
+            <label for="feedback">Report a bug or suggestion:</label><br>
+            <textarea id="feedback" name="message" rows="6" cols="30" placeholder="Describe the bug or suggestion..."></textarea><br><br>
+            <input type="submit" value="Send Feedback">
+        </form>
+    </div>
+    <!--Main Game Wrapper-->
+    <div id="main-wrapper">
+        <div id="game-container">
+            <!--START SCREEN-->
+            <div class="panel" id="start-screen">
+                <h1>Can you Survive the CUA REU?</h1>
+                <div class="start-buttons">
+                    <button style="font-size:40px; padding:16px 30px;" onclick="selectNameScreen()">New Game</button>
+                    <div class="secondary-buttons">
+                        <button style="font-size:22px; padding:16px 30px;" onclick="creditsScreen()">Credits</button>
+                        <button class="instructions-button" onclick="instructionsScreen()">Instructions</button>
                     </div>
                 </div>
-                <button onclick="selectResearchScreen()">Next</button>
             </div>
-        </div>
-        <!--RESEARCH AREAS SCREEN-->
-        <div class="panel hidden" id="choose-research-screen">
-            <div class="title-bar">
-                <button class="home-button" onclick="triggerHome()">Home</button>
-                <div class="spacer"></div>
-                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                <div class="spacer" style="width:25px;"></div>
-                <h2>Can you Survive the CUA REU?</h2>
+            <!--NAME SCREEN-->
+            <div class="panel hidden" id="choose-name-screen" style="display:flex; flex-direction:column; align-items: center;">
+                <div class="title-bar">
+                    <button class="home-button" onclick="triggerHome()">Home</button>
+                    <div class="spacer"></div>
+                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                    <div class="spacer" style="width:25px;"></div>
+                    <h2>Can you Survive the CUA REU?</h2>
+                </div>
+                <div class="game-panel" style="width:500px;">
+                    <p id="game-text-intro">Enter name to start:</p>
+                    <input type="text" name="playerName" id="playerName" class="text-input" placeholder="your name">
+                    <button onclick="selectPlayerChoiceScreen()">Next</button>
+                </div>
             </div>
-            <div class="game-panel">
-                <p id="game-text-intro">Select your top 3 research areas:</p>
-                <div id="research-choices" class="research-choices-grid">
-                    <!--left: available choices-->
-                    <div id="available-research-choices" class="research-choices-column">
-                        <h3>Available</h3>
-                    </div>
-                    <!--right: top 3 picks-->
-                    <div id="selected-research-choices" class="research-choices-column">
-                        <h3>Top 3 Choices</h3>
-                        <ol id="selection-list">
-                            <li data-index="0" class="choice-slot"></li>
-                            <li data-index="1" class="choice-slot"></li>
-                            <li data-index="2" class="choice-slot"></li>
-                        </ol>
-                    </div>
-                </div>>
-                <button onclick="mentorMatchingScreen()">Next</button>
-            </div>
-        </div>
-        <!--MENTOR MATCHING SCREEN-->
-        <div class="panel hidden" id="mentor-matching-screen">
-            <div class="title-bar">
-                <button class="home-button" onclick="triggerHome()">Home</button>
-                <div class="spacer"></div>
-                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                <div class="spacer" style="width:25px;"></div>
-                <h2>Can you Survive the CUA REU?</h2>
-            </div>
-            <div class="game-panel">
-                <h2>Mentor Assignment</h2>
-                <h2 id="mentor-info"></h2>
-                <p id="mentor-research-field"></p>
-                <p id="mentor-research-area"></p>
-                <p id="mentor-research-description"></p>
-                <button onclick="beginInternshipScreen()">Begin Internship</button>
-            </div>
-        </div>
-        <!--RUN GAME PANEL-->
-        <div class="panel hidden" id="game-screen">
-            <div class="title-bar">
-                <button class="home-button" onclick="triggerHome()">Home</button>
-                <div class="spacer"></div>
-                <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                <div class="spacer" style="width:25px;"></div>
-                <h2>Can you Survive the CUA REU?</h2>
-            </div>
-            <div class="game-panel">
-                <!--Main Content Area (turns, events, emails, etc)-->
-                <div class="main-content">
-                    <div class="player-stats">
-                        <h3>Intern: <span id="internPlayerName">???</span></h3>
-                        <p>Field: <span id="playerField">???</span></p>
-                        <p>Mentor: <span id="mentorName">???</span></p>
-                        <p>Happiness: <span id="happiness">0</span></p>
-                        <p>Stress: <span id="stress">0</span></p>
-                        <p>Motivation: <span id="motivation">100</span></p>
-                        <p>Research Progress: <span id="researchProgress">0%</span></p>        
-                    </div>
-                    <div id="eventArea">
-                        <h2>Week <span id="currentWeek">0</span></h2>
-                        <p id="eventText">You arrive at the lab...</p>
-                        <p id="eventDescription">Click 'Next Week' to continue.</p>
-                        <div id="choicePanel" class="choice-panel">
-                            <!--Choice buttons for events will go here-->
+            <!--PLAYER CHOICE SCREEN-->
+            <div class="panel hidden" id="player-choice-screen">
+                <div class="title-bar">
+                    <button class="home-button" onclick="triggerHome()">Home</button>
+                    <div class="spacer"></div>
+                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                    <div class="spacer" style="width:25px;"></div>
+                    <h2>Can you Survive the CUA REU?</h2>
+                </div>
+                <div class="game-panel">
+                    <p id="game-text-intro">Choose a Playable Intern</p> <!--wording??-->
+                    <div class="character-grid" id="player-character-grid">
+                        <div class="character-card" data-id="archie">
+                            <img src="characters/archie.png" alt="Character: Archie">
+                            <h3>Archie</h3>
+                            <p>French</p>
                         </div>
-                        <div id="eventResult" class="event-result hidden">
-                            <p id="resultText">RESULT TEXT WILL GO HERE</p>
-                            <p id="resultTextStats">RESULT TEXT STATS WILL GO HERE</p>
+                        <div class="character-card" data-id="celine">
+                            <img src="characters/celine.png" alt="Character: Celine">
+                            <h3>Celine</h3>
+                            <p>description here</p>
                         </div>
-                        <div class="button-panel">
-                            <!--<button id="notification-button" onclick="showAlerts()">!</button>-->
-                            <button id="nextWeek-button" onclick="nextWeek()">Next Week</button>
-                            <button id="nextTurn-button" class="hidden" onclick="nextTurn()">Next Event</button>
+                        <div class="character-card" data-id="emma">
+                            <img src="characters/emma.png" alt="Character: Emma">
+                            <h3>Emma</h3>
+                            <p>description here</p>
+                        </div>
+                        <div class="character-card" data-id="jacob">
+                            <img src="characters/jacob.png" alt="Character: Jacob">
+                            <h3>Jacob</h3>
+                            <p>description here</p>
+                        </div>
+                        <div class="character-card" data-id="james">
+                            <img src="characters/james.png" alt="Character: James">
+                            <h3>James</h3>
+                            <p>description here</p> 
+                        </div>
+                        <div class="character-card" data-id="mallory">
+                            <img src="characters/mallory.png" alt="Character: Mallory">
+                            <h3>Mallory</h3>
+                            <p>description here</p>
+                        </div>
+                        <div class="character-card" data-id="marlena">
+                            <img src="characters/marlena.png" alt="Character: Marlena">
+                            <h3>Marlena</h3>
+                            <p>description here</p>
+                        </div>
+                        <div class="character-card" data-id="walker">
+                            <img src="characters/walker.png" alt="Character: Walker">
+                            <h3>Walker</h3>
+                            <p>Skateboarding physicist</p>
                         </div>
                     </div>
-                </div>
-                <!-- Bottom: Progress Bar -->
-                <div class="week-progress">
-                    <label for="weekBar">Internship Progress:</label>
-                    <progress id="weekBar" value="0" max="10"></progress>
-                    <span id="weeksLeft">10</span> weeks left
+                    <button onclick="selectResearchScreen()">Next</button>
                 </div>
             </div>
-        </div>
-        <!--CREDITS SCREEN-->
-        <div class="panel hidden" id="credits-screen">
-            <div class="title-bar">
-                <button class="home-button-main">Home</button>
-                <div class="spacer" style="width:50px;"></div>
-                <h2>Made Possible By:</h2>
-                <div class="spacer" style="width:50px;"></div>
-            </div>
-            <h2>Dr. Carlos Yero, Ronnie White, and the dining staff of Garvey Hall.</h2>
-        </div>
-        <!--INSTRUCTIONS SCREEN-->
-        <div class="panel hidden" id="instructions-screen">
-            <div class="title-bar">
-                <button class="home-button-main">Home</button>
-                <div class="spacer" style="width:50px;"></div>
-                <h2>To Play:</h2>
-                <div class="spacer" style="width:50px;"></div>
-            </div>
-            <div class="instructions-content">
-                <div class="scroll-box">
-                    <p>You are playing as a physics REU intern at Catholic University of America</p>
-                    <p>Once you press New Game you will enter a name and your areas of interest for research</p>
-                    <p>You will be placed with a mentor then start working in their lab for the 10 week program</p>
-                    <p>Each week there will be different events that you can respond to.</p>
-                    <p>On the left of your game screen your stats will be visible. Don't let any of them get to 0 or you will lose :(</p>
-                    <p>On the right side of your game screen is the main event window where you will learn of events and respond to them, as well as a button to advance to the next week</p>
-                    <p>On the bottom of your game screen is a progress bar that tells you how many weeks you have left before your internship is over.</p>
-                    <p>Good luck!</p>
+            <!--RESEARCH AREAS SCREEN-->
+            <div class="panel hidden" id="choose-research-screen">
+                <div class="title-bar">
+                    <button class="home-button" onclick="triggerHome()">Home</button>
+                    <div class="spacer"></div>
+                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                    <div class="spacer" style="width:25px;"></div>
+                    <h2>Can you Survive the CUA REU?</h2>
+                </div>
+                <div class="game-panel">
+                    <p id="game-text-intro">Select your top 3 research areas:</p>
+                    <div id="research-choices" class="research-choices-grid">
+                        <!--left: available choices-->
+                        <div id="available-research-choices" class="research-choices-column">
+                            <h3>Available</h3>
+                        </div>
+                        <!--right: top 3 picks-->
+                        <div id="selected-research-choices" class="research-choices-column">
+                            <h3>Top 3 Choices</h3>
+                            <ol id="selection-list">
+                                <li data-index="0" class="choice-slot"></li>
+                                <li data-index="1" class="choice-slot"></li>
+                                <li data-index="2" class="choice-slot"></li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button onclick="mentorMatchingScreen()">Next</button>
                 </div>
             </div>
-        </div>
-        <!--HOME OVERLAY-->
-        <div id="confirmOverlay" class="hidden">
-            <div class="confirm-box">
-                <p>Are you sure you want to return to the home screen?</p>
-                <div class="confirm-buttons">
-                    <button id="confirmYes">Yes</button>
-                    <button id="confirmNo">No</button>
+            <!--MENTOR MATCHING SCREEN-->
+            <div class="panel hidden" id="mentor-matching-screen">
+                <div class="title-bar">
+                    <button class="home-button" onclick="triggerHome()">Home</button>
+                    <div class="spacer"></div>
+                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                    <div class="spacer" style="width:25px;"></div>
+                    <h2>Can you Survive the CUA REU?</h2>
+                </div>
+                <div class="game-panel">
+                    <h2>Mentor Assignment</h2>
+                    <h2 id="mentor-info"></h2>
+                    <p id="mentor-research-field"></p>
+                    <p id="mentor-research-area"></p>
+                    <p id="mentor-research-description"></p>
+                    <button onclick="beginInternshipScreen()">Begin Internship</button>
                 </div>
             </div>
-        </div>
-        <!--INSTRUCTIONS OVERLAY-->
-        <div id="instructionsOverlay" class="hidden">
-            <div class="instructions-box">
-                <p>Type your name in the text box to save your high score. Select an intern to play as during the summer, but be careful who you choose! Some interns have different skills than others.</p>
-                <div class="instructions-buttons">
-                    <button id="instructionsBack">Back</button>
+            <!--RUN GAME PANEL-->
+            <div class="panel hidden" id="game-screen">
+                <div class="title-bar">
+                    <button class="home-button" onclick="triggerHome()">Home</button>
+                    <div class="spacer"></div>
+                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
+                    <div class="spacer" style="width:25px;"></div>
+                    <h2>Can you Survive the CUA REU?</h2>
+                </div>
+                <div class="game-panel">
+                    <!--Main Content Area (turns, events, emails, etc)-->
+                    <div class="main-content">
+                        <div class="player-stats">
+                            <h3>Intern: <span id="internPlayerName">???</span></h3>
+                            <p>Field: <span id="playerField">???</span></p>
+                            <p>Mentor: <span id="mentorName">???</span></p>
+                            <p>Happiness: <span id="happiness">0</span></p>
+                            <p>Stress: <span id="stress">0</span></p>
+                            <p>Motivation: <span id="motivation">100</span></p>
+                            <p>Research Progress: <span id="researchProgress">0%</span></p>        
+                        </div>
+                        <div id="eventArea">
+                            <h2>Week <span id="currentWeek">0</span></h2>
+                            <p id="eventText">You arrive at the lab...</p>
+                            <p id="eventDescription">Click 'Next Week' to continue.</p>
+                            <div id="choicePanel" class="choice-panel">
+                                <!--Choice buttons for events will go here-->
+                            </div>
+                            <div id="eventResult" class="event-result hidden">
+                                <p id="resultText">RESULT TEXT WILL GO HERE</p>
+                                <p id="resultTextStats">RESULT TEXT STATS WILL GO HERE</p>
+                            </div>
+                            <div class="button-panel">
+                                <!--<button id="notification-button" onclick="showAlerts()">!</button>-->
+                                <button id="nextWeek-button" onclick="nextWeek()">Next Week</button>
+                                <button id="nextTurn-button" class="hidden" onclick="nextTurn()">Next Event</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bottom: Progress Bar -->
+                    <div class="week-progress">
+                        <label for="weekBar">Internship Progress:</label>
+                        <progress id="weekBar" value="0" max="10"></progress>
+                        <span id="weeksLeft">10</span> weeks left
+                    </div>
+                </div>
+            </div>
+            <!--CREDITS SCREEN-->
+            <div class="panel hidden" id="credits-screen">
+                <div class="title-bar">
+                    <button class="home-button-main">Home</button>
+                    <div class="spacer" style="width:50px;"></div>
+                    <h2>Made (Possible) By:</h2>
+                    <div class="spacer" style="width:50px;"></div>
+                </div>
+                <h2>The 2025 CUA REU Interns</h2>
+                <h2>Dr. Carlos Yero, Ronnie White, and the dining staff of Garvey Hall.</h2>
+            </div>
+            <!--INSTRUCTIONS SCREEN-->
+            <div class="panel hidden" id="instructions-screen">
+                <div class="title-bar">
+                    <button class="home-button-main">Home</button>
+                    <div class="spacer" style="width:50px;"></div>
+                    <h2>To Play:</h2>
+                    <div class="spacer" style="width:50px;"></div>
+                </div>
+                <div class="instructions-content">
+                    <div class="scroll-box">
+                        <p>You are playing as a physics REU intern at Catholic University of America</p>
+                        <p>Once you press New Game you will enter a name and your areas of interest for research</p>
+                        <p>You will be placed with a mentor then start working in their lab for the 10 week program</p>
+                        <p>Each week there will be different events that you can respond to.</p>
+                        <p>On the left of your game screen your stats will be visible. Don't let any of them get to 0 or you will lose :(</p>
+                        <p>On the right side of your game screen is the main event window where you will learn of events and respond to them, as well as a button to advance to the next week</p>
+                        <p>On the bottom of your game screen is a progress bar that tells you how many weeks you have left before your internship is over.</p>
+                        <p>Good luck!</p>
+                    </div>
+                </div>
+            </div>
+            <!--HOME OVERLAY-->
+            <div id="confirmOverlay" class="hidden">
+                <div class="confirm-box">
+                    <p>Are you sure you want to return to the home screen?</p>
+                    <div class="confirm-buttons">
+                        <button id="confirmYes">Yes</button>
+                        <button id="confirmNo">No</button>
+                    </div>
+                </div>
+            </div>
+            <!--INSTRUCTIONS OVERLAY-->
+            <div id="instructionsOverlay" class="hidden">
+                <div class="instructions-box">
+                    <p>Type your name in the text box to save your high score. Select an intern to play as during the summer, but be careful who you choose! Some interns have different skills than others.</p>
+                    <div class="instructions-buttons">
+                        <button id="instructionsBack">Back</button>
+                    </div>
                 </div>
             </div>
         </div>
