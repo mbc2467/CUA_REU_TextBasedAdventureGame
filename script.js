@@ -3,7 +3,6 @@ currentScreen = "start-screen";
 function startScreen() {
     currentScreen = "start-screen";
     document.getElementById('start-screen').classList.remove('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -16,7 +15,6 @@ function startScreen() {
 function creditsScreen() {
     currentScreen = "credits-screen";
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.remove('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -27,7 +25,6 @@ function creditsScreen() {
 function instructionsScreen() {
     currentScreen = "instructions-screen";
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -35,29 +32,9 @@ function instructionsScreen() {
     document.getElementById('instructions-screen').classList.remove('hidden');
     document.getElementById('player-choice-screen').classList.add('hidden');
 }
-function selectNameScreen() {
-    currentScreen = "choose-name-screen";
-    document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.remove('hidden');
-    document.getElementById('choose-research-screen').classList.add('hidden');
-    document.getElementById('credits-screen').classList.add('hidden');
-    document.getElementById('mentor-matching-screen').classList.add('hidden');
-    document.getElementById('game-screen').classList.add('hidden');
-    document.getElementById('instructions-screen').classList.add('hidden');
-    document.getElementById('player-choice-screen').classList.add('hidden');
-}
 function selectPlayerChoiceScreen() {
-    const name = document.getElementById("playerName").value.trim();
-    console.log("PLAYER NAME: " + name);
-        // Check if name is empty
-    if (name === "") {
-        alert("Please enter your name.");
-        return;
-    }
-    gameState.internName = name;
     currentScreen = "player-choice-screen";
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -66,14 +43,15 @@ function selectPlayerChoiceScreen() {
     document.getElementById('player-choice-screen').classList.remove('hidden');
 }
 function selectResearchScreen() {
+    console.log("CHARACTER NAME: " + gameState.character.name);
     if(gameState.character === null) {
         console.log("No character selected");
         return;
     }
+    gameState.internName = gameState.character.name; // Set intern name from character
     console.log("Selected Character Card: " + gameState.character);
     currentScreen = "choose-research-screen";
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.remove('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -89,7 +67,6 @@ function mentorMatchingScreen() {
         return;
     }
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.remove('hidden');
@@ -102,7 +79,6 @@ function mentorMatchingScreen() {
 function beginInternshipScreen() {
     currentScreen = "game-screen";
     document.getElementById('start-screen').classList.add('hidden');
-    document.getElementById('choose-name-screen').classList.add('hidden');
     document.getElementById('choose-research-screen').classList.add('hidden');
     document.getElementById('credits-screen').classList.add('hidden');
     document.getElementById('mentor-matching-screen').classList.add('hidden');
@@ -215,41 +191,49 @@ function initializeStats(){
 
 characterPool = {
     archie:{
+        name: "Archie",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     celine:{
+        name: "Celine",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     emma:{
+        name: "Emma",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     jacob:{
+        name: "Jacob",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     james:{
+        name: "James",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     mallory:{
+        name: "Mallory",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     marlena:{
+        name: "Marlena",
         events:[],
         eventChoices:[],
         eventOutcomes:[]
     },
     walker:{
+        name: "Walker",
         events:[],
         eventChoices:[],
         eventOutcomes:[]

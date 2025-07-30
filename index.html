@@ -24,26 +24,11 @@
             <div class="panel" id="start-screen">
                 <h1>Can you Survive the CUA REU?</h1>
                 <div class="start-buttons">
-                    <button style="font-size:40px; padding:16px 30px;" onclick="selectNameScreen()">New Game</button>
+                    <button style="font-size:40px; padding:16px 30px;" onclick="selectPlayerChoiceScreen()">New Game</button>
                     <div class="secondary-buttons">
                         <button style="font-size:22px; padding:16px 30px;" onclick="creditsScreen()">Credits</button>
                         <button class="instructions-button" onclick="instructionsScreen()">Instructions</button>
                     </div>
-                </div>
-            </div>
-            <!--NAME SCREEN-->
-            <div class="panel hidden" id="choose-name-screen" style="display:flex; flex-direction:column; align-items: center;">
-                <div class="title-bar">
-                    <button class="home-button" onclick="triggerHome()">Home</button>
-                    <div class="spacer"></div>
-                    <button class="instructions-button" onclick="triggerInstructionsPanel()">?</button>
-                    <div class="spacer" style="width:25px;"></div>
-                    <h2>Can you Survive the CUA REU?</h2>
-                </div>
-                <div class="game-panel" style="width:500px;">
-                    <p id="game-text-intro">Enter name to start:</p>
-                    <input type="text" name="playerName" id="playerName" class="text-input" placeholder="your name">
-                    <button onclick="selectPlayerChoiceScreen()">Next</button>
                 </div>
             </div>
             <!--PLAYER CHOICE SCREEN-->
