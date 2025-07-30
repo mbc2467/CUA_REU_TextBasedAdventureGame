@@ -1,14 +1,18 @@
 body {
+    margin: 0;
+    padding: 0;
     background: black;
     color: #ffffff;
     font-family: 'Press Start 2P', monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+}
+
+#main-wrapper{
     transform: scale(0.7);
     transform-origin: center;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 #game-container {
@@ -16,6 +20,7 @@ body {
     max-width: 1500px;
     width: 1100px;
     text-align: center;
+    position: relative;
 }
 
 .panel {
@@ -24,6 +29,67 @@ body {
     padding-top: 1rem;
     line-height: 1.5;
     background-color: #000000;
+    position: relative;
+}
+
+#temporaryBetaScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100vh;
+  background-color: #111;
+  color: white;
+  padding: 16px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 9999;
+  pointer-events: auto;
+  overflow-y: auto;
+  text-align: center;
+}
+#temporaryBetaScreen h3 {
+    color: #ff0066;
+    line-height: 1.5;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+#temporaryBetaScreen p {
+    color: #ffffff;
+    line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+#temporaryBetaScreen textarea {
+    width: 85%;
+    height:400px;
+    background-color:#000000;
+    color: #ffffff;
+    resize: vertical;
+    max-height: 600px;
+    padding: 8px;
+}
+#temporaryBetaScreen input[type="submit"] {
+    background-color: black;
+    color: #ff0066;
+    border: 2px solid #ff0066;
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family:'Press Start 2P', monospace;
+}
+#temporaryBetaScreen input[type="submit"]:hover {
+    background-color: #ff0066;
+    color: black;
+    border: 2px solid #ff0066;
+}
+#feedbackForm {
+    margin-top:20px;
+}
+#feedbackForm label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff;
 }
 
 button {
