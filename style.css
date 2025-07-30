@@ -673,7 +673,6 @@ progress::-moz-progress-bar {
 .character-tile {
   background-color: #111;
   border: 2px solid #00ff99;
-  border-radius: 8px;
   text-align: center;
   padding: 12px 8px;
   cursor: pointer;

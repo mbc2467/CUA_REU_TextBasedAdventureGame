@@ -258,9 +258,6 @@ cards.forEach(card => {
 const researchAreas = [
     "Biophysics", "Computational Physics", "Materials Science", "Nuclear Physics", "Particle Physics"
 ]
-// Abhijit Sarkar (bio), Grzegorz Kalicy (nuclear), Biprodas Dutta (material science)
-// Carlos Yero (nuclear), Tanja Horn (nuclear), Nicholas Mecholsky
-// 
 const mentorPool = {
     "Biophysics": [
         {
@@ -421,6 +418,7 @@ function assignMentor() {
     // Randomly choose field
     const chosenField = weightedFields[Math.floor(Math.random() * weightedFields.length)];
     console.log("Chosen Research Field: " + chosenField);
+    console.log("Selected Research Areas: " + selectedResearchAreas);
 
     // Randomly pick a mentor from that field
     const mentorOptions = mentorPool[chosenField];
@@ -612,7 +610,7 @@ introEvents = [
     },
     {
         id: "readPapers",
-        title: "Learning How to Research",
+        title: "Introduction to Research",
         weekRange: [1],
         description: "Your mentor gives you a stack of papers and a demonstration video",
         choices:[
@@ -654,6 +652,29 @@ introEvents = [
                         weight: [1,1,1,1],
                         effects: [0,+2,0,+2]
                     }
+                ]
+            },
+            {
+                text: "Ignore the papers and video you probably won't need them",
+                outcomes: [
+                    {
+                        resultText: "You get a good understanding on a zoom call with your mentor later.",
+                        chance: 15, // %
+                        weight: [1,1,1,1], 
+                        effects: [0,0,-2,+3]
+                    },
+                    {
+                        resultText: "Your mentor is disappointed in your lack of effort. Not a good first impression.",
+                        chance: 35, // %
+                        weight: [1,1,1,1], 
+                        effects: [-5,0,+5,0]
+                    },
+                    {
+                        resultText: "You'll hopefully learn everything you need on the job.",
+                        chance: 50, // %
+                        weight: [1,1,1,1], 
+                        effects: [-2,0,+2,0]
+                    },
                 ]
             }         
         ]
@@ -894,6 +915,160 @@ introEvents = [
             }
         ]
     }
+]
+majorIntroEvents = [ // intro week meeting with each mentor
+    {
+        id: "archie",
+        title: "",
+        description: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "celine",
+        title: "",
+        decription: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "emma",
+        title: "",
+        description: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "jacob",
+        title: "",
+        decription: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "james",
+        title: "",
+        description: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "mallory",
+        title: "",
+        decription: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "marlena",
+        title: "",
+        description: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: "walker",
+        title: "",
+        decription: "",
+        weekRange: [1],
+        choices: [
+            {
+                text: "",
+                outcomes: [
+                    {
+                        resultText: "",
+                        chance: 100, // %
+                        weight: [1,1,1,1], // happiness, motivation, stress, research progress
+                        effects: [0,0,0,0]
+                    }
+                ]
+            }
+        ]
+    },
 ]
 normalEvents = [
     {
