@@ -16,6 +16,7 @@ IDEAS:
 - Sarkar runs into Marlena, Walker and Archie in the stairwell when they are singing "Star-Spangled Banner" (Fergie's Version)
 - random chance you get caught in a 3-hour-long conversation with avnish or imran about something when they're bored
 - add congressional baseball event (dems get cooked!)
+- gotta add something about James' quenching
 
 
 
