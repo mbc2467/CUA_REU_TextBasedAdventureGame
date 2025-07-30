@@ -533,7 +533,7 @@ introEvents = [
                         effects: [-10,0,+15,0]
                     },
                     {
-                        resultText: "They nod, vaguely impressed.",
+                        resultText: "They nod, subtley impressed.",
                         chance: 40, // %
                         weight: [1,1,1,1], // happiness, motivation, stress, research progress
                         effects: [+3,+3,0,0]
@@ -961,7 +961,7 @@ normalEvents = [
                         effects: [+3,+3,0,+4]
                     },
                     {
-                        resultText: "You mostly stay silent but absorb a lot.",
+                        resultText: "You mostly stay silent but absorb a lot of new information.",
                         chance: 20,
                         weight: [1,1,1,1],
                         effects: [0,+2,0,+2]
@@ -1706,6 +1706,100 @@ normalEvents = [
         ]
     },
     {
+        id: "3Dprinting",
+        title: "Abusing the 3D printer",
+        weekRange: [4,5,6,7,8,9],
+        description: "You want to use the 3D printer to make something, but you can't decide what.",
+        choices:[
+            {
+                text: "Print out a 20-cigarette holder to gift to your friend",
+                outcomes:[
+                    {
+                        resultText: "Dr. Yero catches you and thinks it's funny.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+7,+2,-2,0]
+                    },
+                    {
+                        resultText: "You give it to your friend and they love it.",
+                        chance: 60,
+                        weight: [1,1,1,1],
+                        effects: [+5,+2,-2,0]
+                    },
+                    {
+                        resultText: "You try to print it, but end up breaking the printer (it explodes and bursts into flames).",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-10,-4,+4,-2]
+                    }
+                ]
+            },
+            {
+                text: "Print out a model of the Eiffel Tower as a gift to Dr. Yero.",
+                outcomes:[
+                    {
+                        resultText: "Dr. Yero loves the gesture!",
+                        chance: 60,
+                        weight: [1,1,1,1],
+                        effects: [+5,+5,-4,0]
+                    },
+                    {
+                        resultText: "Dr. Yero is confused, but thanks you anyways.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+2,0,0]
+                    },
+                    {
+                        resultText: "The filament spaghettifies when printing the Tower's intricacies, so you have to spend time repairing it.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-5,-4,+3,-3]
+                    }
+                ]
+            },
+            {
+                text: "Print out a bust of Walker as a joke.",
+                outcomes: [
+                    {
+                        resultText: "Walker thinks its funny and puts it up on a shelf to oversee the lab.",
+                        chance: 85,
+                        weight: [1,1,1,1],
+                        effects: [+3,+3,-2,+2]
+                    },
+                    {
+                        resultText: "The 3D printer can't handle Walker's immaculate beauty and self-destructs.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [-4,-1,+3,0]
+                    }
+                ]
+            },
+            {
+                text: "Print out a TheRocktopus™.",
+                outcomes:[
+                    {
+                        resultText: "Dr. Yero sees it and is both confused and concerned.",
+                        chance: 60,
+                        weight: [1,1,1,1],
+                        effects: [+3,+3,0,0]
+                    },
+                    {
+                        resultText: "TheRocktopus™ is beautiful. TheRocktopus™ is great. TheRocktopus™ is perfect.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+7,+3,-3,0]
+                    },
+                    {
+                        resultText: "TheRocktopus™ coaches you on how to best progress on your research project, leading to a huge breakthrough.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [+2,+3,-2,+8]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         id:"BaltimoreTrip",
         title: "Day-Trip to Baltimore",
         weekRange: [7,8],
@@ -1715,19 +1809,19 @@ normalEvents = [
                 text:"Go to the downtown Farmer's Market",
                 outcomes:[
                     {
-                        resultText:"Buy a watermelon and carry it around with you the rest of the day.",
+                        resultText:"You buy a watermelon and carry it around with you the rest of the day.",
                         chance:35,
                         weight:[1,1,1,1],
                         effects:[+2,0,+1,0]
                     },
                     {
-                        resultText:"Get some great fried donuts to share.",
+                        resultText:"You get some great fried donuts to share.",
                         chance:55,
                         weight:[1,1,1,1],
                         effects:[+4,+2,0,0]
                     },
                     {
-                        resultText:"Fail to hula hoop, and embarass yourself in front of the other interns",
+                        resultText:"You fail to hula hoop and embarass yourself in front of the other interns",
                         chance:10,
                         weight:[1,1,1,1],
                         effects:[-2,0,+3,0]
