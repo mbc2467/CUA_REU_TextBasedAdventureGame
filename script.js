@@ -2454,28 +2454,29 @@ function nextTurn() {
         loadNextGenericWeekEvent();
     }
 }
+
 function nextWeek() {
-    /*
-    if(gameState.currentWeek == 1) {
-        console.log("week 2 coming soon :)");
-        return;
-    } 
-    */
     document.getElementById('nextWeek-button').classList.add('hidden');
     document.getElementById('nextTurn-button').classList.add('hidden');
-    // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
+
+    // End of game check
+    if (gameState.currentWeek >= gameState.totalWeeks) {
+        document.getElementById("eventText").textContent = "Congratulations! You've finished the program.";
+        document.getElementById("eventDescription").textContent = "";
+        document.getElementById("choicePanel").innerHTML = "";
+        document.getElementById("eventResult").classList.add("hidden");
+        return;
+    }
+
     gameState.currentWeek++;
-    console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
     document.getElementById("currentWeek").textContent = gameState.currentWeek;
     document.getElementById("weekBar").value = gameState.currentWeek;
-    document.getElementById("weeksLeft").textContent = 10 - gameState.currentWeek;
+    document.getElementById("weeksLeft").textContent = gameState.totalWeeks - gameState.currentWeek;
+
     if(gameState.currentWeek == 1) {
         weekOneEvents();
-    }
-    else {
-        // week 2-10 events
-        console.log("Loading Week " + gameState.currentWeek + " events");
+    } else {
         genericWeekEvents();
     }
     updateNextWeekButton();
@@ -2503,10 +2504,17 @@ function genericWeekEvents() {
     console.log("Filtered valid events for week " + currentWeek + ": " + validEvents.length);
 
     // If no valid events, just finish the week
+        // If no valid events, just finish the week
     if (validEvents.length === 0) {
         weekEventQueue = [];
         numEventsTilNextWeek = 0;
-        loadNextGenericWeekEvent();
+        // Show message for no events (optional)
+        document.getElementById("eventText").textContent = "No more events this week.";
+        document.getElementById("eventDescription").textContent = "Click 'Next Week' to continue.";
+        document.getElementById("choicePanel").innerHTML = "";
+        document.getElementById("eventResult").classList.add("hidden");
+        document.getElementById('nextWeek-button').classList.remove('hidden');
+        document.getElementById('nextTurn-button').classList.add('hidden');
         return;
     }
 
