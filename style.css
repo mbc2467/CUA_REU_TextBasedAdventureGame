@@ -36,8 +36,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 400px;
+  width: 175px;
   height: 100vh;
+  resize:horizontal;
   background-color: #111;
   color: white;
   padding: 16px;
@@ -50,18 +51,18 @@ body {
 #temporaryBetaScreen h3 {
     color: #ff0066;
     line-height: 1.5;
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 30px;
 }
 #temporaryBetaScreen p {
     color: #ffffff;
     line-height: 1.5;
-    font-size: 16px;
+    font-size: 10px;
     margin-bottom: 40px;
 }
 #temporaryBetaScreen textarea {
     width: 85%;
-    height:400px;
+    height:100px;
     background-color:#000000;
     color: #ffffff;
     resize: vertical;
@@ -73,7 +74,7 @@ body {
     color: #ff0066;
     border: 2px solid #ff0066;
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 10px;
     margin-top: 10px;
     cursor: pointer;
     font-family:'Press Start 2P', monospace;
