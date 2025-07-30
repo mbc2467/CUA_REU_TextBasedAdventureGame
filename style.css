@@ -103,10 +103,15 @@ button {
     font-family: 'Press Start 2P', monospace;
     cursor: pointer;
 }
-
 button:hover {
     background: #ffffff;
     color: black;
+}
+button:disabled {
+    background: black;
+    color: #555;
+    border: 2px solid #555;
+    cursor: default;
 }
 
 .hidden {

@@ -249,6 +249,7 @@ cards.forEach(card => {
 
         // Update gameState
         gameState.character = characterPool[characterId];
+        document.getElementById("playerChoiceNextScreen").disabled = false; // Enable the Next button
         console.log("Selected Character: ", characterId, gameState.character);
   });
 });
@@ -285,6 +286,13 @@ function handleAreaClick(area) {
         selectedResearchAreas.push(area);
     }
     //console.log("Selected Research Areas: ", selectedResearchAreas);
+
+    if(selectedResearchAreas.length == 3) {
+        document.getElementById("researchAreasNextScreen").disabled = false;   
+    }
+    else {
+        document.getElementById("researchAreasNextScreen").disabled = true;
+    }
 
     updateSelectionDisplay();
 }
