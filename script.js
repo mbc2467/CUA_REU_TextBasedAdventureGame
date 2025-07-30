@@ -43,11 +43,6 @@ function selectPlayerChoiceScreen() {
     document.getElementById('player-choice-screen').classList.remove('hidden');
 }
 function selectResearchScreen() {
-    console.log("CHARACTER NAME: " + gameState.character.name);
-    if(gameState.character === null) {
-        console.log("No character selected");
-        return;
-    }
     gameState.internName = gameState.character.name; // Set intern name from character
     console.log("Selected Character Card: " + gameState.character);
     currentScreen = "choose-research-screen";
