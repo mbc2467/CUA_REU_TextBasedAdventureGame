@@ -2494,7 +2494,7 @@ normalEvents = [
                 outcomes: [
                     {
                         resultText: "It's a great meal and your mentor is impressed with your confidence.",
-                        chance: 15,
+                        chance: 20,
                         weight: [1,1,1,1],
                         effects: [+3,+2,0,0]
                     },
@@ -2509,6 +2509,12 @@ normalEvents = [
                         chance: 20,
                         weight: [1,1,1,1],
                         effects: [-5,0,+3,0]
+                    },
+                    {
+                        resultText: "Your mentor tells the waiter to change your order and now you have something you don't like.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects:[-3,-2,0,0]
                     }
                 ]
             },
