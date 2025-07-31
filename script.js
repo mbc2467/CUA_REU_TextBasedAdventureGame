@@ -2577,6 +2577,77 @@ normalEvents = [
                 ]
             }
         ]
+    },
+    {
+        id: "StarSpangledBanner",
+        title: "Star-Spangled Banner",
+        weekRange: [4,5,6,7,8,9],
+        description: "You are walking down the staircase of Hannan Hall with a couple of REU students, proudly singing the National Anthem. Dr. Sarkar catches you while walking up, what do you do?",
+        choices: [
+            {
+                text: "Keep singing, Sarkar just doesn't understand",
+                outcomes: [
+                    {
+                        resultText: "Sarkar joins in the chorus and you all finish the song together.",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [+4,+4,-2,0]
+                    },
+                    {
+                        resultText: "Sarkar looks at you with utter confusion. He didn't like that",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,0]
+                    },
+                    {
+                        resultText: "Sarkar starts singing along, but abruptly stops and starts talking about biophysics",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,+1]
+                    }
+                ]
+            },
+            {
+                text: "Apologize and stop singing",
+                outcomes: [
+                    {
+                        resultText: "Sarkar appreciates your apology and you all continue walking in silent embarassment.",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+4,0]
+                    },
+                    {
+                        resultText: "Sarkar says that he would've joined in if you had kept singing",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+2,0,0]
+                    },
+                    {
+                        resultText: "Sarkar says that he doesn't understand why you would sing the National Anthem in a physics building",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-3,0,+2,0]
+                    }
+                ]
+            },
+            {
+                text: "Ask Sarkar to join in",
+                outcomes: [
+                    {
+                        resultText: "Sarkar joins in and you all finish the song together.",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [+5,+4,-2,0]
+                    },
+                    {
+                        resultText: "Sarkar looks at you with utter confusion. He didn't like that",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,0]
+                    }
+                ]
+            }
+        ]
     }
 ]
 
