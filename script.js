@@ -1069,7 +1069,6 @@ majorIntroEvents = [ // intro week meeting with each mentor
             }
         ]
     },
-]
 normalEvents = [
     {
         id:"labMeeting",
@@ -1584,7 +1583,7 @@ normalEvents = [
                         effects: [+3,-1,0,0]
                     },
                     {
-                        resultText:"You get food but anything you have to pay for is dissapointing.",
+                        resultText:"You buy some food from Trader Joe's, but anything you have to pay for is disappointing.",
                         chance: 30,
                         weight: [1,0,1,0],
                         effects: [-1,0,-2,0]
@@ -2155,7 +2154,7 @@ normalEvents = [
                     },
                     {
                         resultText:"You try to calculate the gravitational potential of the top of the Capitol Dome and get escorted away by security.",
-                        chane: 30,
+                        chance: 30,
                         weight: [1,1,1,0],
                         effects: [-3,0,+4,0]
                     }
@@ -2292,8 +2291,151 @@ normalEvents = [
                 ]
             }
         ]
-    }
-]
+    },
+    {
+    id: "GottaQuench",
+    title: "Gotta Quench",
+    weekRange: [4,5,6,7,8,9],
+    description: "An REU friend needs some help quenching their sample. What do you do?",
+    choices: [
+        {
+            text: "Help them quench",
+            outcomes: [
+                {
+                    resultText: "You help them quench their sample and they are very grateful.",
+                    chance: 60,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,0,+3]
+                },
+                {
+                    resultText: "You help them quench their sample, but it takes longer than expected and you miss dinner.",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [-3,0,+2,+2]
+                },
+                {
+                    resultText: "You help them quench their sample, but it explodes in your face and shards of glass fly everywhere.",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-5,-3,+5,-1]
+                }
+            ]
+        },
+        {
+            text: "Ignore them; you're super busy with your own research, anyways",
+            outcomes: [
+                {
+                    resultText: "You ignore their request and focus on your own research, but the REU people like you a little bit less now.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [+2,-2,+2,+3]
+                },
+                {
+                    resultText: "You ignore their request and focus on your own research, but you feel guilty about it.",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [-2,0,+3,+3]
+                },
+                {
+                    resultText: "You ignore their request and focus on your own research, but you end up missing out on a great bonding opportunity.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [-3,0,+2,+3]
+                }
+            ]
+        },
+        {
+            text: "Offer to help them quench, but only if they help you with your own research later",
+            outcomes: [
+                {
+                    resultText: "You help them quench their sample and they agree to help you with your research later.",
+                    chance: 70,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,0,+3]
+                },
+                {
+                    resultText: "You help them quench their sample, but they don't agree to help you with your research later.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [+2,0,+2,-1]
+                },
+                {
+                    resultText: "You help them quench their sample, you end up ruining it and they are very upset.",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-5,-3,+5,-1]
+                }
+            ]
+        }
+    ]
+    },
+    {
+    id: "congressionalBaseball",
+    title: "Congressional Baseball Game",
+    weekRange: [2,3,4,5],
+    description: "Some other REU students invite you to go to the Congressional Baseball Game with them.",
+    choices: [
+        {
+            text: "Go with them",
+            outcomes: [
+                {
+                    resultText: "You have a great time! The Democrats get absolutely destroyed, though",
+                    chance: 70,
+                    weight: [1,1,1,1],
+                    effects: [+4,+3,-3,0]
+                },
+                {
+                    resultText: "You go, but the game is boring and you end up leaving early. It was still fun hanging out with the REUs, though",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [+2,+2,-2,0]
+                }
+            ]
+        },
+        {
+            text: "Decline the invitation and work on your research instead",
+            outcomes: [
+                {
+                    resultText: "You decline the invitation to spend some more time on your research, but the other students had a great time. You wish you had gone",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [-2,0,+2,+3]
+                },
+                {
+                    resultText: "You decline the invitation and focus on your research. The students who went said the game sucked anyways",
+                    chance: 40,
+                    weight: [1,1,1,1],
+                    effects: [+2,0,-1,+4]
+                },
+                {
+                    resultText: "You don't go, but the students who went saw their Senators. They even got to meet Joni Ernst and that one Maryland Congressman",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-3,-1,0,+2]
+                }
+            ]
+        },
+        {
+            text: "Go, but only to heckle the woke libs.",
+            outcomes: [
+                {
+                    resultText: "You heckle the Democrats and they get really mad. You get kicked out of the stadium.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [-3,-2,+5,0]
+                },
+                {
+                    resultText: "With your help, the Democrats got absolutely destroyed. You feel like you made a difference.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,-2,0]
+                }
+            ]
+        }
+    ]
+    },
+]]
+
 globalMeetingEvents=[ // List of global meetings that can each happen every week
     {
         id:"globalMeeting1",
@@ -2344,7 +2486,7 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
         description:""
     },
     {
-        id:"globalMeetin9",
+        id:"globalMeeting9",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
         description:""
@@ -2523,49 +2665,72 @@ function applyOutcomeResults(outcome) {
     // happiness
     stat_hap = outcome.effects[0];
     if(stat_hap != 0){
-        gameState.stats.happiness += stat_hap;
-        if(stat_hap > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_hap + " happiness\n";
+        if (stat_hap + gameState.stats.happiness < 100) {
+            gameState.stats.happiness += stat_hap;
+            if(stat_hap > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_hap + " happiness\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_hap + " happiness\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_hap + " happiness\n";
+            document.getElementById("resultTextStats").textContent += "Happiness at maximum!\n";
+            gameState.stats.happiness += (100 - gameState.stats.happiness); // Cap happiness at 100
         }
     }
 
     // motivation
     stat_mot = outcome.effects[1];
     if(stat_mot != 0){
-        gameState.stats.motivation += stat_mot;
-        if(stat_mot > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_mot + " motivation\n";
+        if (stat_mot + gameState.stats.motivation < 100) {
+            gameState.stats.motivation += stat_mot;
+            if(stat_mot > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_mot + " motivation\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_mot + " motivation\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_mot + " motivation\n";
+            document.getElementById("resultTextStats").textContent += "Motivation at maximum!\n";
+            gameState.stats.motivation += (100 - gameState.stats.motivation); // Cap motivation at 100
         }
-
     }
 
     // stress
     stat_str = outcome.effects[2];
     if(stat_str != 0){
-        gameState.stats.stress += stat_str;
-        if(stat_str > 0) {
-            document.getElementById("resultTextStats").textContent +=  "+" + stat_str + " stress\n";
+        if (stat_str + gameState.stats.stress < 100) {
+            gameState.stats.stress += stat_str;
+            if(stat_str > 0) {
+                document.getElementById("resultTextStats").textContent +=  "+" + stat_str + " stress\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_str + " stress\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_str + " stress\n";
+            document.getElementById("resultTextStats").textContent += "Stress at maximum!\n";
+            gameState.stats.stress += (100 - gameState.stats.stress); // Cap stress at 100
         }
     }
     
     // research progress
     stat_pro = outcome.effects[3];
     if(stat_pro != 0){
-        gameState.stats.researchProgress += stat_pro;
-        if(stat_pro > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_pro + " research progress\n";
+        if (stat_pro + gameState.stats.researchProgress < 100) {
+            gameState.stats.researchProgress += stat_pro;
+            if(stat_pro > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_pro + " research progress\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_pro + " research progress\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_pro + " research progress\n";
+            document.getElementById("resultTextStats").textContent += "Research progress at maximum!\n";
+            gameState.stats.researchProgress += (100 - gameState.stats.researchProgress); // Cap research progress at 100
         }
     }
 
@@ -2591,6 +2756,7 @@ function nextWeek() {
     console.log("HIDING NEXT WEEK AND NEXT TURN BUTTONS");
     // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
     gameState.currentWeek++;
+    gameState.stats.researchProgress += 8; // Adds 8 research progress for advancing to next week
     console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
     document.getElementById("currentWeek").textContent = gameState.currentWeek;
