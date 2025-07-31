@@ -2431,7 +2431,7 @@ function loadNextWeek1Event() {
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK 1 COMPLETE");
-        // nextTurn(); // or whatever should happen after week 1
+        nextTurn(); // changed this to be able to progress past week 8
     }    
 }
 function loadEvent(event) {
