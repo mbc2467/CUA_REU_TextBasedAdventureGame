@@ -1069,7 +1069,6 @@ majorIntroEvents = [ // intro week meeting with each mentor
             }
         ]
     },
-]
 normalEvents = [
     {
         id:"labMeeting",
@@ -2155,7 +2154,7 @@ normalEvents = [
                     },
                     {
                         resultText:"You try to calculate the gravitational potential of the top of the Capitol Dome and get escorted away by security.",
-                        chane: 30,
+                        chance: 30,
                         weight: [1,1,1,0],
                         effects: [-3,0,+4,0]
                     }
@@ -2323,7 +2322,7 @@ normalEvents = [
             ]
         },
         {
-            text: "Ignore them---you're super busy with your own research, anyways",
+            text: "Ignore them; you're super busy with your own research, anyways",
             outcomes: [
                 {
                     resultText: "You ignore their request and focus on your own research, but the REU people like you a little bit less now.",
@@ -2369,8 +2368,73 @@ normalEvents = [
             ]
         }
     ]
-}
-]
+    },
+    {
+    id: "congressionalBaseball",
+    title: "Congressional Baseball Game",
+    weekRange: [2,3,4,5],
+    description: "Some other REU students invite you to go to the Congressional Baseball Game with them.",
+    choices: [
+        {
+            text: "Go with them",
+            outcomes: [
+                {
+                    resultText: "You have a great time! The Democrats get absolutely destroyed, though",
+                    chance: 70,
+                    weight: [1,1,1,1],
+                    effects: [+4,+3,-3,0]
+                },
+                {
+                    resultText: "You go, but the game is boring and you end up leaving early. It was still fun hanging out with the REUs, though",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [+2,+2,-2,0]
+                }
+            ]
+        },
+        {
+            text: "Decline the invitation and work on your research instead",
+            outcomes: [
+                {
+                    resultText: "You decline the invitation to spend some more time on your research, but the other students had a great time. You wish you had gone",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [-2,0,+2,+3]
+                },
+                {
+                    resultText: "You decline the invitation and focus on your research. The students who went said the game sucked anyways",
+                    chance: 40,
+                    weight: [1,1,1,1],
+                    effects: [+2,0,-1,+4]
+                },
+                {
+                    resultText: "You don't go, but the students who went saw their Senators. They even got to meet Joni Ernst and that one Maryland Congressman",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-3,-1,0,+2]
+                }
+            ]
+        },
+        {
+            text: "Go, but only to heckle the woke libs.",
+            outcomes: [
+                {
+                    resultText: "You heckle the Democrats and they get really mad. You get kicked out of the stadium.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [-3,-2,+5,0]
+                },
+                {
+                    resultText: "With your help, the Democrats got absolutely destroyed. You feel like you made a difference.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,-2,0]
+                }
+            ]
+        }
+    ]
+    },
+]]
 
 globalMeetingEvents=[ // List of global meetings that can each happen every week
     {
@@ -2422,7 +2486,7 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
         description:""
     },
     {
-        id:"globalMeetin9",
+        id:"globalMeeting9",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
         description:""
