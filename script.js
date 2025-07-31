@@ -2523,49 +2523,68 @@ function applyOutcomeResults(outcome) {
     // happiness
     stat_hap = outcome.effects[0];
     if(stat_hap != 0){
-        gameState.stats.happiness += stat_hap;
-        if(stat_hap > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_hap + " happiness\n";
+        if (stat_hap + gameState.stats.happiness < 100) {
+            gameState.stats.happiness += stat_hap;
+            if(stat_hap > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_hap + " happiness\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_hap + " happiness\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_hap + " happiness\n";
+            document.getElementById("resultTextStats").textContent += "Happiness at maximum!\n";
         }
     }
 
     // motivation
     stat_mot = outcome.effects[1];
     if(stat_mot != 0){
-        gameState.stats.motivation += stat_mot;
-        if(stat_mot > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_mot + " motivation\n";
+        if (stat_mot + gameState.stats.motivation < 100) {
+            gameState.stats.motivation += stat_mot;
+            if(stat_mot > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_mot + " motivation\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_mot + " motivation\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_mot + " motivation\n";
+            document.getElementById("resultTextStats").textContent += "Motivation at maximum!\n";
         }
-
     }
 
     // stress
     stat_str = outcome.effects[2];
     if(stat_str != 0){
-        gameState.stats.stress += stat_str;
-        if(stat_str > 0) {
-            document.getElementById("resultTextStats").textContent +=  "+" + stat_str + " stress\n";
+        if (stat_str + gameState.stats.stress < 100) {
+            gameState.stats.stress += stat_str;
+            if(stat_str > 0) {
+                document.getElementById("resultTextStats").textContent +=  "+" + stat_str + " stress\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_str + " stress\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_str + " stress\n";
+            document.getElementById("resultTextStats").textContent += "Stress at maximum!\n";
         }
     }
     
     // research progress
     stat_pro = outcome.effects[3];
     if(stat_pro != 0){
-        gameState.stats.researchProgress += stat_pro;
-        if(stat_pro > 0) {
-            document.getElementById("resultTextStats").textContent += "+" + stat_pro + " research progress\n";
+        if (stat_pro + gameState.stats.researchProgress < 100) {
+            gameState.stats.researchProgress += stat_pro;
+            if(stat_pro > 0) {
+                document.getElementById("resultTextStats").textContent += "+" + stat_pro + " research progress\n";
+            }
+            else {
+                document.getElementById("resultTextStats").textContent += stat_pro + " research progress\n";
+            }
         }
         else {
-            document.getElementById("resultTextStats").textContent += stat_pro + " research progress\n";
+            document.getElementById("resultTextStats").textContent += "Research progress at maximum!\n";
         }
     }
 
@@ -2591,6 +2610,7 @@ function nextWeek() {
     console.log("HIDING NEXT WEEK AND NEXT TURN BUTTONS");
     // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
     gameState.currentWeek++;
+    gameState.stats.researchProgress += 8; // Adds 8 research progress for advancing to next week
     console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
     document.getElementById("currentWeek").textContent = gameState.currentWeek;
@@ -2645,17 +2665,12 @@ function genericWeekEvents() {
 }
 
 function loadNextGenericWeekEvent() {
-    if (weekEventQueue.length > 0) {
+   if (weekEventQueue.length > 0) {
         const nextEvent = weekEventQueue.shift();
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK " + gameState.currentWeek + " COMPLETE");
-        document.getElementById("eventText").textContent = "Week " + gameState.currentWeek + " complete!";
-        document.getElementById("eventDescription").textContent = "Click 'Next Week' to continue.";
-        document.getElementById("choicePanel").innerHTML = "";
-        document.getElementById("eventResult").classList.add("hidden");
-        document.getElementById('nextWeek-button').classList.remove('hidden');
-        document.getElementById('nextTurn-button').classList.add('hidden');
+        // nextTurn(); // or whatever should happen after week 1
     }   
 }
 
