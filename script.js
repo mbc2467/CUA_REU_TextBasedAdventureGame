@@ -3137,7 +3137,7 @@ function nextWeek() {
     console.log("HIDING NEXT WEEK AND NEXT TURN BUTTONS");
     // console.log("hiding next week AND next turn buttons -- directly from nextweek() function");
     gameState.currentWeek++;
-    gameState.stats.researchProgress += 8; // Adds 8 research progress for advancing to next week
+    if(gameState.currentWeek != 1) gameState.stats.researchProgress += 8; // Adds 8 research progress for advancing to next week
     console.log("ADVANCING TO WEEK: " + gameState.currentWeek);
     updateUI();
     document.getElementById("currentWeek").textContent = gameState.currentWeek;
