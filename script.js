@@ -2723,19 +2723,95 @@ normalEvents = [
                         effects: [+3,+2,+1,0]
                     },
                     {
-                        resultText: "You look thoroughly, but there are no government secrets out in the open that you can find.",
+                        resultText: "You look thoroughly, but there are no government secrets out in the open that you can find",
                         chance: 30,
                         weight: [1,1,1,1],
                         effects: [-2,-1,+2,0]
                     },
                     {
-                        resultText: "There's a bunch of soldiers down there and arrest you for trying to access the secrets",
+                        resultText: "There's a bunch of soldiers in the basement and arrest you for trying to access the secrets",
                         chance: 30,
                         weight: [1,1,1,1],
                         effects: [-5,-3,+5,-3]
                     }
+                ] 
+            }
+        ]
+    },
+    {
+        id: "boredDiscussion",
+        title: "Bored Discussion",
+        weekRange: [2,3,4,5,6,7,8,9],
+        description: "You, Avnish, and Imran are bored in the lab. What do you talk about?",
+        choices: [
+            {
+                text: "Discuss your favorite philosophers",
+                outcomes: [
+                    {
+                        resultText: "You have a deep discussion about free will, determinism, and Avnish starts quoting Nietzsche.",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,0]
+                    },
+                    {
+                        resultText: "You end up arguing about whether or not Kant was right about everything.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,0]
+                    },
+                    {
+                        resultText: "You realize that you don't actually know much about philosophy and feel a bit embarrassed.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-1,-2,+3,0]
+                    }
                 ]
-                
+            },
+            {
+                text: "Talk about your favorite science books",
+                outcomes: [
+                    {
+                        resultText: "You have a great discussion about A Brief History of Time and other popular science books",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,0]
+                    },
+                    {
+                        resultText: "You end up arguing about whether or not The God Delusion is a good book.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,0]
+                    },
+                    {
+                        resultText: "You learn that Imran has never read a science book in his life and you feel a bit embarrassed for him.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-1,-2,+3,0]
+                    }
+                ]
+            },
+            {
+                text: "Learn how to cuss in Hindi",
+                outcomes: [
+                    {
+                        resultText: "You learn some new words and phrases, but Avnish warns you not to use them in public.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+1,0,0]
+                    },
+                    {
+                        resultText: "You call your friends a diabolical name in Hindi, but they have no idea what it means",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-1,0,+2,0]
+                    },
+                    {
+                        resultText: "The conversation eventually leads to popular Indian songs, and you learn a lot about the culture",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+4,+4,0,0]
+                    }
+                ]
             }
         ]
     }
