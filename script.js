@@ -2431,7 +2431,7 @@ function loadNextWeek1Event() {
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK 1 COMPLETE");
-        nextTurn(); // changed this to be able to progress past week 8
+        // nextTurn(); // or whatever should happen after week 1
     }    
 }
 function loadEvent(event) {
@@ -2645,12 +2645,17 @@ function genericWeekEvents() {
 }
 
 function loadNextGenericWeekEvent() {
-   if (weekEventQueue.length > 0) {
+    if (weekEventQueue.length > 0) {
         const nextEvent = weekEventQueue.shift();
         loadEvent(nextEvent); // this displays the event and choice UI
     } else {
         console.log("WEEK " + gameState.currentWeek + " COMPLETE");
-        // nextTurn(); // or whatever should happen after week 1
+        document.getElementById("eventText").textContent = "Week " + gameState.currentWeek + " complete!";
+        document.getElementById("eventDescription").textContent = "Click 'Next Week' to continue.";
+        document.getElementById("choicePanel").innerHTML = "";
+        document.getElementById("eventResult").classList.add("hidden");
+        document.getElementById('nextWeek-button').classList.remove('hidden');
+        document.getElementById('nextTurn-button').classList.add('hidden');
     }   
 }
 
