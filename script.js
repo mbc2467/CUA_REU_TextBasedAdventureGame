@@ -2292,8 +2292,86 @@ normalEvents = [
                 ]
             }
         ]
-    }
+    },
+    {
+    id: "GottaQuench",
+    title: "Gotta Quench",
+    weekRange: [4,5,6,7,8,9],
+    description: "An REU friend needs some help quenching their sample. What do you do?",
+    choices: [
+        {
+            text: "Help them quench",
+            outcomes: [
+                {
+                    resultText: "You help them quench their sample and they are very grateful.",
+                    chance: 60,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,0,+3]
+                },
+                {
+                    resultText: "You help them quench their sample, but it takes longer than expected and you miss dinner.",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [-3,0,+2,+2]
+                },
+                {
+                    resultText: "You help them quench their sample, but it explodes in your face and shards of glass fly everywhere.",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-5,-3,+5,-1]
+                }
+            ]
+        },
+        {
+            text: "Ignore them---you're super busy with your own research, anyways",
+            outcomes: [
+                {
+                    resultText: "You ignore their request and focus on your own research, but the REU people like you a little bit less now.",
+                    chance: 50,
+                    weight: [1,1,1,1],
+                    effects: [+2,-2,+2,+3]
+                },
+                {
+                    resultText: "You ignore their request and focus on your own research, but you feel guilty about it.",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [-2,0,+3,+3]
+                },
+                {
+                    resultText: "You ignore their request and focus on your own research, but you end up missing out on a great bonding opportunity.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [-3,0,+2,+3]
+                }
+            ]
+        },
+        {
+            text: "Offer to help them quench, but only if they help you with your own research later",
+            outcomes: [
+                {
+                    resultText: "You help them quench their sample and they agree to help you with your research later.",
+                    chance: 70,
+                    weight: [1,1,1,1],
+                    effects: [+3,+2,0,+3]
+                },
+                {
+                    resultText: "You help them quench their sample, but they don't agree to help you with your research later.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [+2,0,+2,-1]
+                },
+                {
+                    resultText: "You help them quench their sample, you end up ruining it and they are very upset.",
+                    chance: 10,
+                    weight: [1,1,1,1],
+                    effects: [-5,-3,+5,-1]
+                }
+            ]
+        }
+    ]
+}
 ]
+
 globalMeetingEvents=[ // List of global meetings that can each happen every week
     {
         id:"globalMeeting1",
