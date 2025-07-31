@@ -2294,195 +2294,290 @@ normalEvents = [
         ]
     },
     {
-    id: "GottaQuench",
-    title: "Gotta Quench",
-    weekRange: [4,5,6,7,8,9],
-    description: "An REU friend needs some help quenching their sample. What do you do?",
-    choices: [
-        {
-            text: "Help them quench",
-            outcomes: [
-                {
-                    resultText: "You help them quench their sample and they are very grateful.",
-                    chance: 60,
-                    weight: [1,1,1,1],
-                    effects: [+3,+2,0,+3]
-                },
-                {
-                    resultText: "You help them quench their sample, but it takes longer than expected and you miss dinner.",
-                    chance: 30,
-                    weight: [1,1,1,1],
-                    effects: [-3,0,+2,+2]
-                },
-                {
-                    resultText: "You help them quench their sample, but it explodes in your face and shards of glass fly everywhere.",
-                    chance: 10,
-                    weight: [1,1,1,1],
-                    effects: [-5,-3,+5,-1]
-                }
-            ]
-        },
-        {
-            text: "Ignore them; you're super busy with your own research, anyways",
-            outcomes: [
-                {
-                    resultText: "You ignore their request and focus on your own research, but the REU people like you a little bit less now.",
-                    chance: 50,
-                    weight: [1,1,1,1],
-                    effects: [+2,-2,+2,+3]
-                },
-                {
-                    resultText: "You ignore their request and focus on your own research, but you feel guilty about it.",
-                    chance: 30,
-                    weight: [1,1,1,1],
-                    effects: [-2,0,+3,+3]
-                },
-                {
-                    resultText: "You ignore their request and focus on your own research, but you end up missing out on a great bonding opportunity.",
-                    chance: 20,
-                    weight: [1,1,1,1],
-                    effects: [-3,0,+2,+3]
-                }
-            ]
-        },
-        {
-            text: "Offer to help them quench, but only if they help you with your own research later",
-            outcomes: [
-                {
-                    resultText: "You help them quench their sample and they agree to help you with your research later.",
-                    chance: 70,
-                    weight: [1,1,1,1],
-                    effects: [+3,+2,0,+3]
-                },
-                {
-                    resultText: "You help them quench their sample, but they don't agree to help you with your research later.",
-                    chance: 20,
-                    weight: [1,1,1,1],
-                    effects: [+2,0,+2,-1]
-                },
-                {
-                    resultText: "You help them quench their sample, you end up ruining it and they are very upset.",
-                    chance: 10,
-                    weight: [1,1,1,1],
-                    effects: [-5,-3,+5,-1]
-                }
-            ]
-        }
-    ]
+        id: "GottaQuench",
+        title: "Gotta Quench",
+        weekRange: [4,5,6,7,8,9],
+        description: "An REU friend needs some help quenching their sample. What do you do?",
+        choices: [
+            {
+                text: "Help them quench",
+                outcomes: [
+                    {
+                        resultText: "You help them quench their sample and they are very grateful.",
+                        chance: 60,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,+3]
+                    },
+                    {
+                        resultText: "You help them quench their sample, but it takes longer than expected and you miss dinner.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-3,0,+2,+2]
+                    },
+                    {
+                        resultText: "You help them quench their sample, but it explodes in your face and shards of glass fly everywhere.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-5,-3,+5,-1]
+                    }
+                ]
+            },
+            {
+                text: "Ignore them; you're super busy with your own research, anyways",
+                outcomes: [
+                    {
+                        resultText: "You ignore their request and focus on your own research, but the REU people like you a little bit less now.",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [+2,-2,+2,+3]
+                    },
+                    {
+                        resultText: "You ignore their request and focus on your own research, but you feel guilty about it.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,+3]
+                    },
+                    {
+                        resultText: "You ignore their request and focus on your own research, but you end up missing out on a great bonding opportunity.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-3,0,+2,+3]
+                    }
+                ]
+            },
+            {
+                text: "Offer to help them quench, but only if they help you with your own research later",
+                outcomes: [
+                    {
+                        resultText: "You help them quench their sample and they agree to help you with your research later.",
+                        chance: 70,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,+3]
+                    },
+                    {
+                        resultText: "You help them quench their sample, but they don't agree to help you with your research later.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [+2,0,+2,-1]
+                    },
+                    {
+                        resultText: "You help them quench their sample, you end up ruining it and they are very upset.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-5,-3,+5,-1]
+                    }
+                ]
+            }
+        ]
     },
     {
-    id: "congressionalBaseball",
-    title: "Congressional Baseball Game",
-    weekRange: [2,3,4,5],
-    description: "Some other REU students invite you to go to the Congressional Baseball Game with them.",
-    choices: [
-        {
-            text: "Go with them to the game!",
-            outcomes: [
-                {
-                    resultText: "You have a great time! The Democrats get absolutely destroyed, though",
-                    chance: 30,
-                    weight: [1,1,1,1],
-                    effects: [+4,+3,-3,0]
-                },
-                {
-                    resultText: "You go, but the game is boring and you end up leaving early. It was still fun hanging out with the REUs, though",
-                    chance: 30,
-                    weight: [1,1,1,1],
-                    effects: [+2,+2,-2,0]
-                },
-                {
-                    resultText: "Your local congressperson hits a home run and you catch it!",
-                    chance: 15,
-                    weight: [1,1,1,1],
-                    effects: [+4,+2,0,0]
-                },
-                {
-                    resultText: "Joni Ernst hits a home run that smacks you in the face. Worst day ever.",
-                    chance: 5,
-                    weight: [1,1,1,1],
-                    effects: [-5,-3,+5,0]
-                },
-                {
-                    resultText: "You get stuck next to someone who thinks climate change is a vibe and try to change their mind using thermodynamics and a hotdog wrapper.",
-                    chance: 20,
-                    weight: [1,1,1,1],
-                    effects: [0,+3,+3,0]
-                }
-            ]
-        },
-        {
-            text: "Decline the invitation and work on your research instead - Science waits for no game!",
-            outcomes: [
-                {
-                    resultText: "You decline the invitation to spend some more time on your research, but the other students had a great time. You wish you had gone",
-                    chance: 50,
-                    weight: [1,1,1,1],
-                    effects: [-2,0,+2,+3]
-                },
-                {
-                    resultText: "You decline the invitation and focus on your research. The students who went said the game sucked anyways",
-                    chance: 40,
-                    weight: [1,1,1,1],
-                    effects: [+2,0,-1,+5]
-                },
-                {
-                    resultText: "You don't go, but the students who went saw their Senators. They even got to meet Joni Ernst and that one Maryland Congressman",
-                    chance: 10,
-                    weight: [1,1,1,1],
-                    effects: [-3,-1,0,+2]
-                }
-            ]
-        },
-        {
-            text: "Go, but only to heckle the woke libs.",
-            outcomes: [
-                {
-                    resultText: "You heckle the Democrats and they get really mad. You get kicked out of the stadium.",
-                    chance: 50,
-                    weight: [1,1,1,1],
-                    effects: [-3,-2,+5,0]
-                },
-                {
-                    resultText: "With your help, the Democrats got absolutely destroyed. You feel like you made a difference.",
-                    chance: 50,
-                    weight: [1,1,1,1],
-                    effects: [+3,+2,-2,0]
-                }
-            ]
-        },
-        {
-            text: "Go, but bring your laptop to the game to multitask.",
-            outcomes:[
-                {
-                    resultText: "Your laptop overheats in the sun and becomes a very expensive tray for nachos.",
-                    chance: 15,
-                    weight: [1,1,1,1],
-                    effects: [-5,0,+5,0]
-                },
-                {
-                    resultText: "You connect to stadium Wi-Fi labeled “NSA Surveillance Van” and can no longer tell if your code is compiling or being monitored.",
-                    chance: 35,
-                    weight: [1,1,1,1],
-                    effects: [-2,0,+3,+3]
-                },
-                {
-                    resultText: "You manage to get some work done during the game but do miss out on dancing on the jumbotron.",
-                    chance: 20,
-                    weight: [1,1,1,1],
-                    effects: [0,-2,0,+4]
-                },
-                {
-                    resultText: "Your battery dies in the third inning, and you’re forced to actually… enjoy the game.",
-                    chance: 30,
-                    weight: [1,1,1,1],
-                    effects: [+2,0,0,+1]
+        id: "congressionalBaseball",
+        title: "Congressional Baseball Game",
+        weekRange: [2,3,4,5],
+        description: "Some other REU students invite you to go to the Congressional Baseball Game with them.",
+        choices: [
+            {
+                text: "Go with them to the game!",
+                outcomes: [
+                    {
+                        resultText: "You have a great time! The Democrats get absolutely destroyed, though",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+4,+3,-3,0]
+                    },
+                    {
+                        resultText: "You go, but the game is boring and you end up leaving early. It was still fun hanging out with the REUs, though",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+2,-2,0]
+                    },
+                    {
+                        resultText: "Your local congressperson hits a home run and you catch it!",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [+4,+2,0,0]
+                    },
+                    {
+                        resultText: "Joni Ernst hits a home run that smacks you in the face. Worst day ever.",
+                        chance: 5,
+                        weight: [1,1,1,1],
+                        effects: [-5,-3,+5,0]
+                    },
+                    {
+                        resultText: "You get stuck next to someone who thinks climate change is a vibe and try to change their mind using thermodynamics and a hotdog wrapper.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,+3,+3,0]
+                    }
+                ]
+            },
+            {
+                text: "Decline the invitation and work on your research instead - Science waits for no game!",
+                outcomes: [
+                    {
+                        resultText: "You decline the invitation to spend some more time on your research, but the other students had a great time. You wish you had gone",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,+3]
+                    },
+                    {
+                        resultText: "You decline the invitation and focus on your research. The students who went said the game sucked anyways",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+2,0,-1,+5]
+                    },
+                    {
+                        resultText: "You don't go, but the students who went saw their Senators. They even got to meet Joni Ernst and that one Maryland Congressman",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [-3,-1,0,+2]
+                    }
+                ]
+            },
+            {
+                text: "Go, but only to heckle the woke libs.",
+                outcomes: [
+                    {
+                        resultText: "You heckle the Democrats and they get really mad. You get kicked out of the stadium.",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-3,-2,+5,0]
+                    },
+                    {
+                        resultText: "With your help, the Democrats got absolutely destroyed. You feel like you made a difference.",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,-2,0]
+                    }
+                ]
+            },
+            {
+                text: "Go, but bring your laptop to the game to multitask.",
+                outcomes:[
+                    {
+                        resultText: "Your laptop overheats in the sun and becomes a very expensive tray for nachos.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [-5,0,+5,0]
+                    },
+                    {
+                        resultText: "You connect to stadium Wi-Fi labeled “NSA Surveillance Van” and can no longer tell if your code is compiling or being monitored.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,+3]
+                    },
+                    {
+                        resultText: "You manage to get some work done during the game but do miss out on dancing on the jumbotron.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,-2,0,+4]
+                    },
+                    {
+                        resultText: "Your battery dies in the third inning, and you’re forced to actually… enjoy the game.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,0,0,+1]
 
-                }
-            ]
-        }
-    ]
+                    }
+                ]
+            }
+        ]
     },
+    {
+        id: "labLunch",
+        title: "Lab Lunch",
+        weekRange: [6,7,8],
+        description: "Your mentor takes everyone in your lab out to lunch at a local restaurant.",
+        choices: [
+            {
+                text: "Go and order the most expensive item on the menu",
+                outcomes: [
+                    {
+                        resultText: "It's a great meal and your mentor is impressed with your confidence.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,0]
+                    },
+                    {
+                        resultText: "Your mentor is surprised but pays for it anyway. You feel a bit guilty.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-1,+1,+2,0]
+                    },
+                    {
+                        resultText: "Turns out the lab is splitting the bill after all.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-5,0,+3,0]
+                    }
+                ]
+            },
+            {
+                text: "Offer to split the bill.",
+                outcomes: [
+                    {
+                        resultText: "Your mentor looks touched but firmly refuses.",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+2,+1,0,0]
+                    },
+                    {
+                        resultText: "Your mentor agrees that everyone can cover their own meal, everyone else gives you dirty looks.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+3,0]
+                    },
+                    {
+                        resultText: "They accept your offer to call your bluff and you end up paying for half of the meal.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [-5,0,+5,0]
+                    },
+                    {
+                        resultText: "Your mentor insists on treating everyone but is flattered by your offer.",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,0]
+                    }
+                ]
+            },
+            {
+                text: "Bring a lab notebook and ask to discuss data",
+                outcomes: [
+                    {
+                        resultText: "Your mentor is impressed by your dedication and you have a productive discussion.",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,+3]
+                    },
+                    {
+                        resultText: "Your mentor loves it and brings out his notebook to discuss data with you.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [+2,+3,0,+5]
+                    },
+                    {
+                        resultText: "Your mentor raises an eyebrow and says you can discuss data later.",
+                        chance: 25,
+                        weight: [1,1,1,1],
+                        effects: [0,-2,+2,0]
+                    },
+                    {
+                        resultText: "Your mentor is annoyed and tells you to relax for once.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-3,0,+4,0]
+                    },
+                    {
+                        resultText: "You end up discussing your project with the waiter instead, who gives you some great advice.",
+                        chance: 10,
+                        weight: [1,1,1,1],
+                        effects: [0,+3,0,+2]
+                    }
+                ]
+            }
+        ]
+    }
 ]
 
 globalMeetingEvents=[ // List of global meetings that can each happen every week
