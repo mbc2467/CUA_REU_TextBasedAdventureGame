@@ -3037,6 +3037,7 @@ function loadNextGenericWeekEvent() {
 
 
 let weeklyEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0]; // index 0 is unused, so week 1 starts at index 1
+let weeklyNormalEventCoverage = [-10,0,0,0,0,0,0,0,0,0,0];
 debugEventCounting(); // Call this function to log the event coverage for debugging purposes
 function debugEventCounting() {
     introEvents.forEach(event => {
@@ -3051,6 +3052,7 @@ function debugEventCounting() {
         event.weekRange.forEach(week => {
             if (week >= 1 && week <= 10) {
                 weeklyEventCoverage[week]++;
+                weeklyNormalEventCoverage[week]++;
             }
         });
     });
@@ -3064,6 +3066,8 @@ function debugEventCounting() {
     });
 
     console.log("Event Coverage: " + weeklyEventCoverage);
+    console.log("Normal Event Coverage: " + weeklyNormalEventCoverage);
+    console.log("Total Events:\n\tIntro Events: " + introEvents.length + "\n\tNormal Events: " + normalEvents.length);
     return;
 }
 
