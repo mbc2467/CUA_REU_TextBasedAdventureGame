@@ -2665,14 +2665,14 @@ normalEvents = [
                 text: "Yes, let's explore!",
                 outcomes: [
                     {
-                        resultText: "You find the Vitreous State Lab, a feed tank (presumably for large animals), and a hidden stash of nuclear waste",
-                        chance: 50,
+                        resultText: "You find the Vitreous State Lab, a feed tank (presumably for large animals and/or government experiments), and a hidden stash of nuclear waste",
+                        chance: 40,
                         weight: [1,1,1,1],
                         effects: [+4,+3,0,0]
                     },
                     {
                         resultText: "You find a secret lab where Charlie plans his experiments on the interns",
-                        chance: 30,
+                        chance: 25,
                         weight: [1,1,1,1],
                         effects: [+2,+2,0,+1]
                     },
@@ -2681,6 +2681,12 @@ normalEvents = [
                         chance: 20,
                         weight: [1,1,1,1],
                         effects: [-5,-3,+5,-3]
+                    },
+                    {
+                        resultText:"You make it down and find nothing, but on your way back up the elevator shuts down and you are trapped for hours.",
+                        chance: 15,
+                        weight: [1,1,1,1],
+                        effects: [-3,-2,0,0]
                     }
                 ]
             },
@@ -2708,7 +2714,7 @@ normalEvents = [
                 ]
             },
             {
-                text: "You go, but only if there are government secrest down there",
+                text: "You go, but only if there are government secrets down there",
                 outcomes: [
                     {
                         resultText: "You find some old government documents and a secret lab where Charlie plans his experiments on the interns",
@@ -2717,7 +2723,7 @@ normalEvents = [
                         effects: [+3,+2,+1,0]
                     },
                     {
-                        resultText: "You look and look, but there's no government secrets out in the open",
+                        resultText: "You look thoroughly, but there are no government secrets out in the open that you can find.",
                         chance: 30,
                         weight: [1,1,1,1],
                         effects: [-2,-1,+2,0]
