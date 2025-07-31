@@ -13,7 +13,6 @@ IDEAS:
 - hostile walking priest encounter on campus
 - calling ms leslie (dream about birds pecking eyes out)
 - tornado warning (window literally falls into kitchen)
-- Sarkar runs into Marlena, Walker and Archie in the stairwell when they are singing "Star-Spangled Banner" (Fergie's Version)
 - random chance you get caught in a 3-hour-long conversation with avnish or imran about something when they're bored
 - add congressional baseball event (dems get cooked!)
 
