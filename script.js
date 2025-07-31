@@ -2852,13 +2852,184 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
         id:"globalMeeting6",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
-        description:"You watch a twelve minute long video about how to break into finance as a physics major. You have a lengthy discussion on 'How do you convince a one-club golfer to use the rest of the clubs in his bag?'"
+        description:"You watch a twelve minute long video about how to break into finance as a physics major. You have a lengthy discussion on how to convince a one-club golfer to use the rest of the clubs in his bag?",
+        choices: [
+            {
+                text: "Tell him even Schrödinger wouldn’t use just one club — all options must remain in superposition.",
+                outcomes: [
+                    {
+                        resultText: "The golfer says he doesn’t “get” the cat thing, but he also doesn’t want to be wrong. Starts experimenting with a pitching wedge.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [+2,+2,0,0]
+                    },
+                    {
+                        resultText: "The golfer misinterprets you and now insists all clubs exist simultaneously in his mind, but still only uses one.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [0,-3,0,0]
+                    },
+                    {
+                        resultText: "Another intern begins a heated argument about whether golf is a wave or a particle sport.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-1,0,+2,0]
+                    }
+                ]
+            },
+            {
+                text: "Suggest that rotational inertia depends on club length, and he’s objectively inefficient.",
+                outcomes: [
+                    {
+                        resultText: "The golfer tells you to stop making up fake physics words.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,-2,0,0]
+                    },
+                    {
+                        resultText: "Another intern tries to one-up you with a moment-arm counterexample and now everyone is lost.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects:[-2,0,+2,0]
+                    },
+                    {
+                        resultText: "The mentor gives his input on the subject and gives a mini-lecture.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [+2,0,0,+2]
+                    }
+                ]
+            },
+            {
+                text: "Draw a phase diagram showing club utility versus shot distance and let the data speak for itself.",
+                outcomes: [
+                    {
+                        resultText: "The golfer examines your graph and begins carrying a 5-iron for mid-range optimization.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,0,0]
+                    },
+                    {
+                        resultText: "The golfer becomes obsessed with creating a swing-temperature axis and asks if you'll help him instead of doing your project.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+1,-2,0,0]
+                    },
+                    {
+                        resultText: "The meeting derails into a 30-minute discussion about whether club utility is truly continuous.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [-2,-2,0,0]
+                    }
+                ]
+            },
+            {
+                text: "Sneakily replace his one club with a different one each hole and see how long it takes him to notice.",
+                outcomes: [
+                    {
+                        resultText: "He catches you mid-swap and demands to know if this is a double-blind study.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,0]
+                    },
+                    {
+                        resultText: "He doesn’t notice for 9 holes and ends the round 3 strokes under par.",
+                        chance:35,
+                        weight:[1,1,1,1],
+                        effects:[+2,+2,0,0]
+                    },
+                    {
+                        resultText: "You describe your plan but then realize someone executed it with your pencil case",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,0]
+                    }
+                ]
+            }
+        ]
     },
     {
         id:"globalMeeting7",
         title:"REU Global Meeting",
-        weekRange:[1,2,3,4,5,6,7,8],
-        description:"You learn about common post-grad options for physics majors. They do well. Apparently, however, psychology majors have it rough."
+        weekRange:[2,3,4,5,6],
+        description:"You learn about common post-grad options for physics majors. They do well. Apparently, however, psychology majors have it rough.",
+        choices: [
+            {
+                text: "Ask the speaker about how they selected their graduate school",
+                outcomes: [
+                    {
+                        resultText: "The speaker explains their journey in detail and gives you good advice.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+3,0,0]
+                    },
+                    {
+                        resultText: "The speaker mentions that they started in " + gameState.field + " then realized there were no jobs. This does not inspire confidence.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [0,-1,+1,0]
+                    },
+                    {
+                        resultText: "The speaker embarks on a longwinded explanation of all the challenges they went through in their application process.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,-3,+2,0]
+                    }
+                ]
+            },
+            {
+                text: "Stay quiet and take notes diligently.",
+                outcomes: [
+                    {
+                        resultText: "You zone out halfway through. Notes are half-useful.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [-1,-3,0,0]
+                    },
+                    {
+                        resultText: "The talk turns out to mostly be about graduate student coffee preferences, which you now have very thorough notes covering.",
+                        chance: 35,
+                        weight:[1,1,1,1],
+                        effects:[+2,0,0,0]
+                    },
+                    {
+                        resultText:"You learn a lot about your choices for the future.",
+                        chance:30,
+                        weight: [1,1,1,1],
+                        effects:[+1,+3,0,0]
+                    }
+                ]
+            },
+            {
+                text: "Privately worry if needing to see a psychologist in the future due to your degree choice is that much better.",
+                outcomes: [
+                    {
+                        resultText: "You Google 'alternative careers for physics majors' and find a surprisingly hopeful Reddit thread.",
+                        chance: 35,
+                        weight: [1,1,1,1],
+                        effects: [-1,-3,0,0]
+                    },
+                    {
+                        resultText: "You joke about it in group chat and others relate.",
+                        chance: 35,
+                        weight:[1,1,1,1],
+                        effects:[+2,0,-2,0]
+                    },
+                    {
+                        resultText: "You spiral a bit and end up questioning if this is right for you.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+4,0]
+                    },
+                    {
+                        resultText:"You close your eyes and briefly recieve a flash of your potential future if you switched to pharmacology.",
+                        chance:10,
+                        weight: [1,1,1,1],
+                        effects:[+2,-3,0,0]
+                    }
+                ]
+            }
+        ]
     },
     {
         id:"globalMeeting8",
