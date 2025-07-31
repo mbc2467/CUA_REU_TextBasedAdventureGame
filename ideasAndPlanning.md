@@ -44,3 +44,26 @@ personal - garvey dining hall is not open for any meals, friend comes to visit, 
 random/funny - pigeon in the lab, get a $5 palm reading from a psychic, someone (other intern (RARE: ronnie white)) tries to convert you to catholicism
 big/impactful - midterm presentation (if vibes are good enough Dr. Yero lets everyone just read their abstract instead), visit to UMD visit (choose a lab to tour, maybe play hangman?)
 
+IDEAS FROM MARLENA
+- umd make your own poster, mingle with other students (all)
+- get caught in a long conversation with avnish when he is bored (archie, walker, marlena)
+- mini game (walker vs. lunch lady), (physics hangman with howard/umd),
+- salt take (eat 590,000,000%DV) 
+- go to congressional baseball and watch dems get cooked (marlena, walker, mallory)
+- get caught in flash flood and eat pho (emma, marlena, celine)
+- meet love of life at safeway (walker)
+- james sidequests
+- run simulations, read about islam and listen to political podcasts
+- jacob drive back and forth every day needing to pay for gas L
+- pride (celine and marlena) week 3. Hear cynthia erivo perform
+- ride lime scooters around the capital (celine, marlena, walker). Walker +5 aura for tricks
+- celine cooks for us mothering
+
+Specific JLab Marlena
+[- go to jlab in car with greg and learn about soviet poland 
+- walk around for three hours in unsafe area and heat advisory 95+ deg
+- meet up with grad students from your home university who you’ve seen on zoom for 8 months
+- VA beach with friends ]
+
+-  dinner party at Declan’s: uncooked lasagna,Gegagedigedagedago, and ikea heights (marlena, celine, mallory)
+- watch the ISS, get thrown in law fountain (marlena, mallory, walker)
