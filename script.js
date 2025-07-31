@@ -2654,6 +2654,84 @@ normalEvents = [
                 ]
             }
         ]
+    },
+    {
+        id: "basementExploration",
+        title: "Basement Exploration",
+        weekRange: [7,8,9],
+        description: "Some REU students want to check out the basement of Hannan Hall. Do you join them?",
+        choices: [
+            {
+                text: "Yes, let's explore!",
+                outcomes: [
+                    {
+                        resultText: "You find the Vitreous State Lab, a feed tank (presumably for large animals), and a hidden stash of nuclear waste",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [+4,+3,0,0]
+                    },
+                    {
+                        resultText: "You find a secret lab where Charlie plans his experiments on the interns",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+2,+2,0,+1]
+                    },
+                    {
+                        resultText: "While you're down there, Charlie catches you and brings you to the police",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [-5,-3,+5,-3]
+                    }
+                ]
+            },
+            {
+                text: "No, I have research to do",
+                outcomes: [
+                    {
+                        resultText: "You decline the invitation to focus on your research, but the other students had a great time. You wish that you had gone",
+                        chance: 50,
+                        weight: [1,1,1,1],
+                        effects: [-2,0,+2,+4]
+                    },
+                    {
+                        resultText: "You decide not to go and talk to your mentor instead. They appreciate your dedication.",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [+1,0,-1,+5]
+                    },
+                    {
+                        resultText: "You miss out on a great bonding opportunity with the other interns, but you get some good work done.",
+                        chance: 20,
+                        weight: [1,1,1,1],
+                        effects: [0,-2,0,+3]
+                    }
+                ]
+            },
+            {
+                text: "You go, but only if there are government secrest down there",
+                outcomes: [
+                    {
+                        resultText: "You find some old government documents and a secret lab where Charlie plans his experiments on the interns",
+                        chance: 40,
+                        weight: [1,1,1,1],
+                        effects: [+3,+2,+1,0]
+                    },
+                    {
+                        resultText: "You look and look, but there's no government secrets out in the open",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-2,-1,+2,0]
+                    },
+                    {
+                        resultText: "There's a bunch of soldiers down there and arrest you for trying to access the secrets",
+                        chance: 30,
+                        weight: [1,1,1,1],
+                        effects: [-5,-3,+5,-3]
+                    }
+                ]
+                
+            }
+        ]
     }
 ]
 
