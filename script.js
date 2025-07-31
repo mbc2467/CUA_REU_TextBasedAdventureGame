@@ -1584,7 +1584,7 @@ normalEvents = [
                         effects: [+3,-1,0,0]
                     },
                     {
-                        resultText:"You get food but anything you have to pay for is dissapointing.",
+                        resultText:"You buy some food from Trader Joe's, but anything you have to pay for is disappointing.",
                         chance: 30,
                         weight: [1,0,1,0],
                         effects: [-1,0,-2,0]
