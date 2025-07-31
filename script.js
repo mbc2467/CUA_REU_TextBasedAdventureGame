@@ -2534,7 +2534,7 @@ function applyOutcomeResults(outcome) {
         }
         else {
             document.getElementById("resultTextStats").textContent += "Happiness at maximum!\n";
-            gameState.stats.happiness = 100; // Cap happiness at 100
+            gameState.stats.happiness += (100 - gameState.stats.happiness); // Cap happiness at 100
         }
     }
 
@@ -2552,7 +2552,7 @@ function applyOutcomeResults(outcome) {
         }
         else {
             document.getElementById("resultTextStats").textContent += "Motivation at maximum!\n";
-            gameState.stats.motivation = 100; // Cap motivation at 100
+            gameState.stats.motivation += (100 - gameState.stats.motivation); // Cap motivation at 100
         }
     }
 
@@ -2570,7 +2570,7 @@ function applyOutcomeResults(outcome) {
         }
         else {
             document.getElementById("resultTextStats").textContent += "Stress at maximum!\n";
-            gameState.stats.stress = 100; // Cap stress at 100
+            gameState.stats.stress += (100 - gameState.stats.stress); // Cap stress at 100
         }
     }
     
@@ -2588,7 +2588,7 @@ function applyOutcomeResults(outcome) {
         }
         else {
             document.getElementById("resultTextStats").textContent += "Research progress at maximum!\n";
-            gameState.stats.researchProgress = 100; // Cap research progress at 100
+            gameState.stats.researchProgress += (100 - gameState.stats.researchProgress); // Cap research progress at 100
         }
     }
 
