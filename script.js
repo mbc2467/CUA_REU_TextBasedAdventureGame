@@ -916,7 +916,7 @@ introEvents = [
         ]
     }
 ]
-majorIntroEvents = [ // intro week meeting with each mentor
+majorIntroEvents = [ // intro week meeting with each mentor and explain research project a bit more
     {
         id: "archie",
         title: "",
@@ -1068,7 +1068,8 @@ majorIntroEvents = [ // intro week meeting with each mentor
                 ]
             }
         ]
-    },
+    }
+]
 normalEvents = [
     {
         id:"labMeeting",
@@ -2376,11 +2377,11 @@ normalEvents = [
     description: "Some other REU students invite you to go to the Congressional Baseball Game with them.",
     choices: [
         {
-            text: "Go with them",
+            text: "Go with them to the game!",
             outcomes: [
                 {
                     resultText: "You have a great time! The Democrats get absolutely destroyed, though",
-                    chance: 70,
+                    chance: 30,
                     weight: [1,1,1,1],
                     effects: [+4,+3,-3,0]
                 },
@@ -2389,11 +2390,29 @@ normalEvents = [
                     chance: 30,
                     weight: [1,1,1,1],
                     effects: [+2,+2,-2,0]
+                },
+                {
+                    resultText: "Your local congressperson hits a home run and you catch it!",
+                    chance: 15,
+                    weight: [1,1,1,1],
+                    effects: [+4,+2,0,0]
+                },
+                {
+                    resultText: "Joni Ernst hits a home run that smacks you in the face. Worst day ever.",
+                    chance: 5,
+                    weight: [1,1,1,1],
+                    effects: [-5,-3,+5,0]
+                },
+                {
+                    resultText: "You get stuck next to someone who thinks climate change is a vibe and try to change their mind using thermodynamics and a hotdog wrapper.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [0,+3,+3,0]
                 }
             ]
         },
         {
-            text: "Decline the invitation and work on your research instead",
+            text: "Decline the invitation and work on your research instead - Science waits for no game!",
             outcomes: [
                 {
                     resultText: "You decline the invitation to spend some more time on your research, but the other students had a great time. You wish you had gone",
@@ -2405,7 +2424,7 @@ normalEvents = [
                     resultText: "You decline the invitation and focus on your research. The students who went said the game sucked anyways",
                     chance: 40,
                     weight: [1,1,1,1],
-                    effects: [+2,0,-1,+4]
+                    effects: [+2,0,-1,+5]
                 },
                 {
                     resultText: "You don't go, but the students who went saw their Senators. They even got to meet Joni Ernst and that one Maryland Congressman",
@@ -2431,10 +2450,40 @@ normalEvents = [
                     effects: [+3,+2,-2,0]
                 }
             ]
+        },
+        {
+            text: "Go, but bring your laptop to the game to multitask.",
+            outcomes:[
+                {
+                    resultText: "Your laptop overheats in the sun and becomes a very expensive tray for nachos.",
+                    chance: 15,
+                    weight: [1,1,1,1],
+                    effects: [-5,0,+5,0]
+                },
+                {
+                    resultText: "You connect to stadium Wi-Fi labeled “NSA Surveillance Van” and can no longer tell if your code is compiling or being monitored.",
+                    chance: 35,
+                    weight: [1,1,1,1],
+                    effects: [-2,0,+3,+3]
+                },
+                {
+                    resultText: "You manage to get some work done during the game but do miss out on dancing on the jumbotron.",
+                    chance: 20,
+                    weight: [1,1,1,1],
+                    effects: [0,-2,0,+4]
+                },
+                {
+                    resultText: "Your battery dies in the third inning, and you’re forced to actually… enjoy the game.",
+                    chance: 30,
+                    weight: [1,1,1,1],
+                    effects: [+2,0,0,+1]
+
+                }
+            ]
         }
     ]
     },
-]]
+]
 
 globalMeetingEvents=[ // List of global meetings that can each happen every week
     {
@@ -2471,13 +2520,13 @@ globalMeetingEvents=[ // List of global meetings that can each happen every week
         id:"globalMeeting6",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
-        description:"You watch a twelve minute long video about how to break into finance as a physics major. The only notable takeaway is the following question that stays in your mind: How do you convince a one-club golfer to use the rest of the clubs in his bag? "
+        description:"You watch a twelve minute long video about how to break into finance as a physics major. You have a lengthy discussion on 'How do you convince a one-club golfer to use the rest of the clubs in his bag?'"
     },
     {
         id:"globalMeeting7",
         title:"REU Global Meeting",
         weekRange:[1,2,3,4,5,6,7,8],
-        description:"You learn about common post-grad options for physics majors. They do well. Apparently, however, psychology majors have it rough"
+        description:"You learn about common post-grad options for physics majors. They do well. Apparently, however, psychology majors have it rough."
     },
     {
         id:"globalMeeting8",
